@@ -1,0 +1,822 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="菜单表" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="菜单表">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="SortID" type="xs:int" minOccurs="0" />
+                <xs:element name="SortName" type="xs:string" minOccurs="0" />
+                <xs:element name="SortParentID" type="xs:int" minOccurs="0" />
+                <xs:element name="SortParentPath" type="xs:string" minOccurs="0" />
+                <xs:element name="SortOrder" type="xs:int" minOccurs="0" />
+                <xs:element name="m_url" type="xs:string" minOccurs="0" />
+                <xs:element name="m_tip" type="xs:string" minOccurs="0" />
+                <xs:element name="m_tag" type="xs:string" minOccurs="0" />
+                <xs:element name="m_ico" type="xs:string" minOccurs="0" />
+                <xs:element name="m_show" type="xs:string" minOccurs="0" />
+                <xs:element name="m_url_formenu_g" type="xs:string" minOccurs="0" />
+                <xs:element name="SortNameTree" type="xs:string" minOccurs="0" />
+                <xs:element name="SortMoveUp" type="xs:int" minOccurs="0" />
+                <xs:element name="SortMoveDown" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <菜单表>
+    <ID>29</ID>
+    <SortID>26</SortID>
+    <SortName>仪表盘</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>1</SortOrder>
+    <m_url>/adminht/demo_home.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-tachometer</m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>├仪表盘</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-9</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1153</ID>
+    <SortID>145</SortID>
+    <SortName>租赁管理</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>2</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-credit-card</m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>├租赁管理</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-8</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1159</ID>
+    <SortID>151</SortID>
+    <SortName>入住合同管理</SortName>
+    <SortParentID>145</SortParentID>
+    <SortParentPath>,145,</SortParentPath>
+    <SortOrder>3</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├入住合同管理</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1158</ID>
+    <SortID>150</SortID>
+    <SortName>退租管理</SortName>
+    <SortParentID>145</SortParentID>
+    <SortParentPath>,145,</SortParentPath>
+    <SortOrder>4</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└退租管理</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1154</ID>
+    <SortID>146</SortID>
+    <SortName>账目管理</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>5</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-briefcase</m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>├账目管理</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-7</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1164</ID>
+    <SortID>156</SortID>
+    <SortName>租金收款单</SortName>
+    <SortParentID>146</SortParentID>
+    <SortParentPath>,146,</SortParentPath>
+    <SortOrder>6</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├租金收款单</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-4</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1163</ID>
+    <SortID>155</SortID>
+    <SortName>押金收款单</SortName>
+    <SortParentID>146</SortParentID>
+    <SortParentPath>,146,</SortParentPath>
+    <SortOrder>7</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├押金收款单</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-3</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1162</ID>
+    <SortID>154</SortID>
+    <SortName>押金退还单</SortName>
+    <SortParentID>146</SortParentID>
+    <SortParentPath>,146,</SortParentPath>
+    <SortOrder>8</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├押金退还单</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1161</ID>
+    <SortID>153</SortID>
+    <SortName>物业费收款单</SortName>
+    <SortParentID>146</SortParentID>
+    <SortParentPath>,146,</SortParentPath>
+    <SortOrder>9</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├物业费收款单</SortNameTree>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1160</ID>
+    <SortID>152</SortID>
+    <SortName>其他退款单</SortName>
+    <SortParentID>146</SortParentID>
+    <SortParentPath>,146,</SortParentPath>
+    <SortOrder>10</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└其他退款单</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1155</ID>
+    <SortID>147</SortID>
+    <SortName>物业管理</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>11</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-leaf</m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>├物业管理</SortNameTree>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-6</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1166</ID>
+    <SortID>158</SortID>
+    <SortName>维修申请</SortName>
+    <SortParentID>147</SortParentID>
+    <SortParentPath>,147,</SortParentPath>
+    <SortOrder>12</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├维修申请</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1165</ID>
+    <SortID>157</SortID>
+    <SortName>维修记录</SortName>
+    <SortParentID>147</SortParentID>
+    <SortParentPath>,147,</SortParentPath>
+    <SortOrder>13</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└维修记录</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>102</ID>
+    <SortID>81</SortID>
+    <SortName>知识管理</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>14</SortOrder>
+    <m_url>/adminht/corepage/bas/list_zhishi.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-share-alt </m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/bas/edit_zhishi.aspx</m_url_formenu_g>
+    <SortNameTree>├知识管理</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>-5</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>37</ID>
+    <SortID>34</SortID>
+    <SortName>数据分析</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>15</SortOrder>
+    <m_url>/adminht/fff.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-bar-chart-o</m_ico>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>├数据分析</SortNameTree>
+    <SortMoveUp>5</SortMoveUp>
+    <SortMoveDown>-4</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1172</ID>
+    <SortID>164</SortID>
+    <SortName>租户一览表</SortName>
+    <SortParentID>34</SortParentID>
+    <SortParentPath>,34,</SortParentPath>
+    <SortOrder>16</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├租户一览表</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-5</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1171</ID>
+    <SortID>163</SortID>
+    <SortName>房屋一览表</SortName>
+    <SortParentID>34</SortParentID>
+    <SortParentPath>,34,</SortParentPath>
+    <SortOrder>17</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├房屋一览表</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-4</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1170</ID>
+    <SortID>162</SortID>
+    <SortName>收款一览表</SortName>
+    <SortParentID>34</SortParentID>
+    <SortParentPath>,34,</SortParentPath>
+    <SortOrder>18</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├收款一览表</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-3</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1169</ID>
+    <SortID>161</SortID>
+    <SortName>租金汇总统计表</SortName>
+    <SortParentID>34</SortParentID>
+    <SortParentPath>,34,</SortParentPath>
+    <SortOrder>19</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├租金汇总统计表</SortNameTree>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1168</ID>
+    <SortID>160</SortID>
+    <SortName>押金汇总统计表</SortName>
+    <SortParentID>34</SortParentID>
+    <SortParentPath>,34,</SortParentPath>
+    <SortOrder>20</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├押金汇总统计表</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1167</ID>
+    <SortID>159</SortID>
+    <SortName>物业费汇总统计表</SortName>
+    <SortParentID>34</SortParentID>
+    <SortParentPath>,34,</SortParentPath>
+    <SortOrder>21</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└物业费汇总统计表</SortNameTree>
+    <SortMoveUp>5</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1173</ID>
+    <SortID>165</SortID>
+    <SortName>预警功能</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>22</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-bullhorn</m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>├预警功能</SortNameTree>
+    <SortMoveUp>6</SortMoveUp>
+    <SortMoveDown>-3</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1179</ID>
+    <SortID>171</SortID>
+    <SortName>消息记录</SortName>
+    <SortParentID>165</SortParentID>
+    <SortParentPath>,165,</SortParentPath>
+    <SortOrder>23</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├消息记录</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-5</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1178</ID>
+    <SortID>170</SortID>
+    <SortName>预警配置</SortName>
+    <SortParentID>165</SortParentID>
+    <SortParentPath>,165,</SortParentPath>
+    <SortOrder>24</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├预警配置</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-4</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1177</ID>
+    <SortID>169</SortID>
+    <SortName>租户资格到期预警</SortName>
+    <SortParentID>165</SortParentID>
+    <SortParentPath>,165,</SortParentPath>
+    <SortOrder>25</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├租户资格到期预警</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-3</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1176</ID>
+    <SortID>168</SortID>
+    <SortName>房租到期预警</SortName>
+    <SortParentID>165</SortParentID>
+    <SortParentPath>,165,</SortParentPath>
+    <SortOrder>26</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├房租到期预警</SortNameTree>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1175</ID>
+    <SortID>167</SortID>
+    <SortName>物业费到期预警</SortName>
+    <SortParentID>165</SortParentID>
+    <SortParentPath>,165,</SortParentPath>
+    <SortOrder>27</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├物业费到期预警</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1174</ID>
+    <SortID>166</SortID>
+    <SortName>合同到期预警</SortName>
+    <SortParentID>165</SortParentID>
+    <SortParentPath>,165,</SortParentPath>
+    <SortOrder>28</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>│└合同到期预警</SortNameTree>
+    <SortMoveUp>5</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>64</ID>
+    <SortID>43</SortID>
+    <SortName>基础数据</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>29</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-info-circle</m_ico>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>├基础数据</SortNameTree>
+    <SortMoveUp>7</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1157</ID>
+    <SortID>149</SortID>
+    <SortName>房屋档案管理</SortName>
+    <SortParentID>43</SortParentID>
+    <SortParentPath>,43,</SortParentPath>
+    <SortOrder>30</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├房屋档案管理</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-4</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1156</ID>
+    <SortID>148</SortID>
+    <SortName>承租人管理</SortName>
+    <SortParentID>43</SortParentID>
+    <SortParentPath>,43,</SortParentPath>
+    <SortOrder>31</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├承租人管理</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-3</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1139</ID>
+    <SortID>143</SortID>
+    <SortName>部门信息维护</SortName>
+    <SortParentID>43</SortParentID>
+    <SortParentPath>,43,</SortParentPath>
+    <SortOrder>32</SortOrder>
+    <m_url>/adminht/menu_pub_edit.aspx?tb=class_org</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├部门信息维护</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>79</ID>
+    <SortID>58</SortID>
+    <SortName>员工信息维护</SortName>
+    <SortParentID>43</SortParentID>
+    <SortParentPath>,43,</SortParentPath>
+    <SortOrder>33</SortOrder>
+    <m_url>/adminht/corepage/bas/list_userinfo.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/bas/edit_userinfo.aspx</m_url_formenu_g>
+    <SortNameTree>│├员工信息维护</SortNameTree>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1152</ID>
+    <SortID>144</SortID>
+    <SortName>知识分享分类</SortName>
+    <SortParentID>43</SortParentID>
+    <SortParentPath>,43,</SortParentPath>
+    <SortOrder>34</SortOrder>
+    <m_url>/adminht/menu_pub_edit.aspx?tb=class_zhishi</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>│└知识分享分类</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>31</ID>
+    <SortID>28</SortID>
+    <SortName>开发专用</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>35</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-cogs</m_ico>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>├开发专用</SortNameTree>
+    <SortMoveUp>8</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>30</ID>
+    <SortID>27</SortID>
+    <SortName>权限数据维护</SortName>
+    <SortParentID>28</SortParentID>
+    <SortParentPath>,28,</SortParentPath>
+    <SortOrder>36</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├权限数据维护</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>28</ID>
+    <SortID>25</SortID>
+    <SortName>系统菜单调整</SortName>
+    <SortParentID>27</SortParentID>
+    <SortParentPath>,28,27,</SortParentPath>
+    <SortOrder>37</SortOrder>
+    <m_url>/adminht/auth_menu_edit.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││├系统菜单调整</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>7</ID>
+    <SortID>7</SortID>
+    <SortName>权限枚举维护</SortName>
+    <SortParentID>27</SortParentID>
+    <SortParentPath>,28,27,</SortParentPath>
+    <SortOrder>38</SortOrder>
+    <m_url>/adminht/auth_enum_list.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││├权限枚举维护</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>6</ID>
+    <SortID>6</SortID>
+    <SortName>权限组维护</SortName>
+    <SortParentID>27</SortParentID>
+    <SortParentPath>,28,27,</SortParentPath>
+    <SortOrder>39</SortOrder>
+    <m_url>/adminht/auth_group_edit.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││└权限组维护</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>13</ID>
+    <SortID>13</SortID>
+    <SortName>基本表单demo</SortName>
+    <SortParentID>28</SortParentID>
+    <SortParentPath>,28,</SortParentPath>
+    <SortOrder>40</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├基本表单demo</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>2</ID>
+    <SortID>2</SortID>
+    <SortName>数据列表demo</SortName>
+    <SortParentID>13</SortParentID>
+    <SortParentPath>,28,13,</SortParentPath>
+    <SortOrder>41</SortOrder>
+    <m_url>/adminht/linshi/demo_dblist.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││├数据列表demo</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-4</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>18</ID>
+    <SortID>15</SortID>
+    <SortName>编辑保存demo</SortName>
+    <SortParentID>13</SortParentID>
+    <SortParentPath>,28,13,</SortParentPath>
+    <SortOrder>42</SortOrder>
+    <m_url>/adminht/linshi/demo_pz_edit.aspx?fff=1&amp;idforedit=150915000006</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││├编辑保存demo</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-3</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>17</ID>
+    <SortID>14</SortID>
+    <SortName>提交表单demo</SortName>
+    <SortParentID>13</SortParentID>
+    <SortParentPath>,28,13,</SortParentPath>
+    <SortOrder>43</SortOrder>
+    <m_url>/adminht/linshi/demo_pz_add.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││├提交表单demo</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>92</ID>
+    <SortID>71</SortID>
+    <SortName>扫描条码例子</SortName>
+    <SortParentID>13</SortParentID>
+    <SortParentPath>,28,13,</SortParentPath>
+    <SortOrder>44</SortOrder>
+    <m_url>/adminht/linshi/demo_tiaomasoamiao.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││├扫描条码例子</SortNameTree>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>38</ID>
+    <SortID>35</SortID>
+    <SortName>上传头像demo</SortName>
+    <SortParentID>13</SortParentID>
+    <SortParentPath>,28,13,</SortParentPath>
+    <SortOrder>45</SortOrder>
+    <m_url>/adminht/demo_uploadface.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>││└上传头像demo</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>53</ID>
+    <SortID>37</SortID>
+    <SortName>通用配置维护</SortName>
+    <SortParentID>28</SortParentID>
+    <SortParentPath>,28,</SortParentPath>
+    <SortOrder>46</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└通用配置维护</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>56</ID>
+    <SortID>40</SortID>
+    <SortName>浏览表单</SortName>
+    <SortParentID>37</SortParentID>
+    <SortParentPath>,28,37,</SortParentPath>
+    <SortOrder>47</SortOrder>
+    <m_url>/adminht/baseset/bs_showformmain.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/baseset/addnewbiaodan_default.aspx★/adminht/baseset/edit_tables_pz.aspx.*pzid=sys_editadd_FUP_FormsMainInfo</m_url_formenu_g>
+    <SortNameTree>││├浏览表单</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-4</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>57</ID>
+    <SortID>41</SortID>
+    <SortName>浏览表单字段</SortName>
+    <SortParentID>37</SortParentID>
+    <SortParentPath>,28,37,</SortParentPath>
+    <SortOrder>48</SortOrder>
+    <m_url>/adminht/baseset/bs_showformSubInfo.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/baseset/edit_tables_pz.aspx.*pzid=sys_editadd_FUP_FormsSubInfo</m_url_formenu_g>
+    <SortNameTree>││├浏览表单字段</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-3</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>58</ID>
+    <SortID>42</SortID>
+    <SortName>浏览表单弹窗</SortName>
+    <SortParentID>37</SortParentID>
+    <SortParentPath>,28,37,</SortParentPath>
+    <SortOrder>49</SortOrder>
+    <m_url>/adminht/baseset/bs_showformSubDialog.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/baseset/addnewtianchuang_default.aspx★/adminht/baseset/edit_tables_pz.aspx.*pzid=sys_editadd_FUP_FormsSubDialog</m_url_formenu_g>
+    <SortNameTree>││├浏览表单弹窗</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>55</ID>
+    <SortID>39</SortID>
+    <SortName>浏览通用列表</SortName>
+    <SortParentID>37</SortParentID>
+    <SortParentPath>,28,37,</SortParentPath>
+    <SortOrder>50</SortOrder>
+    <m_url>/adminht/baseset/bs_showalllist.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/baseset/addnewlist_default.aspx★/adminht/baseset/edit_tables_pz.aspx.*pzid=sys_editadd_FUP_FormsList</m_url_formenu_g>
+    <SortNameTree>││├浏览通用列表</SortNameTree>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>54</ID>
+    <SortID>38</SortID>
+    <SortName>浏览通用列表字段</SortName>
+    <SortParentID>37</SortParentID>
+    <SortParentPath>,28,37,</SortParentPath>
+    <SortOrder>51</SortOrder>
+    <m_url>/adminht/baseset/bs_showalllist_field.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/baseset/edit_tables_pz.aspx.*pzid=sys_editadd_FUP_FormsList_field</m_url_formenu_g>
+    <SortNameTree>││└浏览通用列表字段</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1</ID>
+    <SortID>1</SortID>
+    <SortName>系统权限配置</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>52</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-key</m_ico>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>└系统权限配置</SortNameTree>
+    <SortMoveUp>9</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5</ID>
+    <SortID>5</SortID>
+    <SortName>用户权限分配</SortName>
+    <SortParentID>1</SortParentID>
+    <SortParentPath>,1,</SortParentPath>
+    <SortOrder>53</SortOrder>
+    <m_url>/adminht/auth_oneuser.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├用户权限分配</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>4</ID>
+    <SortID>4</SortID>
+    <SortName>用户权限浏览</SortName>
+    <SortParentID>1</SortParentID>
+    <SortParentPath>,1,</SortParentPath>
+    <SortOrder>54</SortOrder>
+    <m_url>/adminht/auth_userlist.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└用户权限浏览</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+</NewDataSet>

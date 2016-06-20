@@ -1,0 +1,385 @@
+﻿            //关键配置
+		 
+			var dialog_tanchuang_forsubtable = null;
+             jQuery("[*[grid_selector_ID]*]").jqGrid({
+                //direction: "rtl",
+
+                //subgrid options
+                subGrid: false,
+                //data: grid_data,
+                url: "/ajaxpagedemo.aspx?jkname=" + jkname_page1 + "&idforedit=" + getUrlParam('idforedit') + "&fff=" + getUrlParam('fff')+ "&pzid=" + getUrlParam('pzid'),
+                datatype: "local",
+                mtype: "POST",
+                xmlReader: {
+                    root: "NewDataSet",
+                    row: "主要数据",
+                    page: "invoices>currentpage",
+                    total: "invoices>totalpages",
+                    records: "invoices>totalrecords",
+                    repeatitems: false,
+                    id: "jqgird_spid"
+                },
+                prmNames: {
+                    page: 'R_PageNumber',
+                    rows: 'R_PageSize',
+                    sort: 'R_OrderBy',
+                    order: 'R_Sort'
+                },
+                height: 250,
+
+                autowidth: true,
+                shrinkToFit: [*[FS_D_shrinkToFit]*], //是否自动缩放列宽
+                //loadui:'block',
+                //colNames是自定义列明，这里可以不定义，直接在colModel默认使用name作为列名比较方便
+                //colNames: ['隐藏编号','唯一编号', '账号', '省份', '性别', '地区', '整数', '两位小数', '一个日期', '创建日期','图片绑定', '自定义操作'],
+                colModel: [
+                    [*[SubDialog]*]
+                ],
+
+                gridview: true, //这个选项必须开
+                viewrecords: true,
+                rowNum: [*[Default_FD_D_pagesize]*],
+                //rowList: [[*[FD_D_pagesize]*]],
+			 
+                pager: "[*[pager_selector_ID]*]" ,
+				pgbuttons:false,
+				pginput:false,
+                altRows: true,
+                //toppager: true,
+                sortable: false,
+				onCellSelect: function(rowid,iCol,cellcontent,e) {
+     	          if(rowid == $('[*[grid_selector_ID]*]').attr('lastsel_yhb'))
+				  {return false;}
+			  	var savejieguo =$('[*[grid_selector_ID]*]').jqGrid('saveRow', $('[*[grid_selector_ID]*]').attr('lastsel_yhb'));
+				if($('[*[grid_selector_ID]*]').attr('lastsel_yhb') == "-999999" || savejieguo)
+				{
+                     $('[*[grid_selector_ID]*]').jqGrid('editRow', rowid,  {    keys : false });  
+		 
+	 		 
+                     $('[*[grid_selector_ID]*]').attr('lastsel_yhb',rowid);
+			 
+              
+				}
+                 
+          
+        },
+		   
+                multiselect: true,
+                //multikey: "ctrlKey",
+                multiboxonly: true,
+                loadError: function (xhr, status, error) {
+                    bootbox.alert(status + "--" + error);
+
+                },
+                loadComplete: function (data) {
+
+                    if ($(data).text() == "") {
+                        //bootbox.alert("无法获取数据！");
+                    }
+                    if ($(data).find('错误>错误提示').text() != "") {
+                        bootbox.alert($(data).find('错误>错误提示').text());
+                    }
+
+                    var table = this;
+                    setTimeout(function () {
+                        updatePagerIcons(table);
+                        enableTooltips(table);
+                    }, 0);
+                },
+				/*
+                ondblClickRow: function (rowid,iRow,iCol,e) {
+                     
+				
+
+                },
+				*/
+                editurl: url1 + "?ajaxrun=del&jkname=" + jkname_del1 + "&zheshiyige_FID=[*[FSID]*]",
+                caption: "[*[FS_title]*]："
+
+
+
+
+            });
+
+
+
+
+
+            //navButtons
+            jQuery("[*[grid_selector_ID]*]").jqGrid('navGrid', "[*[pager_selector_ID]*]",
+                { 	//navbar options
+                    edit: false,
+                    editicon: 'ace-icon fa fa-pencil blue',
+                    add: false,
+                    addicon: 'ace-icon fa fa-plus-circle purple',
+                    del: false,
+                    delicon: 'ace-icon fa fa-trash-o red',
+                    search: false,
+                    searchicon: 'ace-icon fa fa-search orange',
+                    refresh: false,
+                    refreshicon: 'ace-icon fa fa-refresh green',
+                    view: false,
+                    viewicon: 'ace-icon fa fa-search-plus grey',
+                },
+                {
+                    //edit record form
+						//closeAfterEdit: true,
+						//width: 700,
+						recreateForm: true,
+						beforeShowForm : function(e) {
+							var form = $(e[0]);
+							form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+							style_edit_form(form);
+						}
+                },
+                {
+                    //new record form
+						//width: 700,
+						closeAfterAdd: true,
+						recreateForm: true,
+						viewPagerButtons: false,
+						beforeShowForm : function(e) {
+							var form = $(e[0]);
+							form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar')
+							.wrapInner('<div class="widget-header" />')
+							style_edit_form(form);
+						}
+                },
+                {
+                    //delete record form
+                    recreateForm: true,
+                    beforeShowForm: function (e) {
+                        var form = $(e[0]);
+                        if (form.data('styled')) return false;
+
+                        form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                        style_delete_form(form);
+
+                        form.data('styled', true);
+                    },
+                    onClick: function (e) {
+                        //alert(1);
+                    }
+                },
+                {
+                    //search form
+                    recreateForm: true,
+                    afterShowSearch: function (e) {
+                        var form = $(e[0]);
+                        form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        style_search_form(form);
+                        //form.find('.searchFilter').css('overflow', 'hidden');
+                    },
+                    afterRedraw: function () {
+                        style_search_filters($(this));
+                    }
+                    ,
+                    multipleSearch: true,
+                    multipleGroup: true,
+                    showQuery: true,
+                    jqModal: false
+
+                },
+                {
+                    //view record form
+                    recreateForm: true,
+                    width: 600,
+                    beforeShowForm: function (e) {
+                        var form = $(e[0]);
+                        form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                    }
+                }
+            );
+
+
+
+
+
+			[*[FS_D_setGroupHeaders]*]
+
+ 
+  jQuery("[*[grid_selector_ID]*]").navButtonAdd("[*[pager_selector_ID]*]",{
+   caption:"", 
+   title : "保存",
+   buttonicon:"ace-icon fa fa-floppy-o blue", 
+   onClickButton: function(e){ 
+ 
+
+			var savejieguo =$('[*[grid_selector_ID]*]').jqGrid('saveRow', $('[*[grid_selector_ID]*]').attr('lastsel_yhb'));		 
+			
+			 	 if($('[*[grid_selector_ID]*]').attr('lastsel_yhb') == "-999999" || savejieguo)
+				{
+$('[*[grid_selector_ID]*]').attr('lastsel_yhb',"-999999");
+}
+					  
+   }, 
+   position:"first"
+});
+
+
+ jQuery("[*[grid_selector_ID]*]").navButtonAdd("[*[pager_selector_ID]*]",{
+   caption:"", 
+   title : "删除",
+   buttonicon:"ace-icon fa fa-trash-o red", 
+   onClickButton: function(e){ 
+ 
+	
+						  var selectedRowIds = $("[*[grid_selector_ID]*]").jqGrid("getGridParam","selarrrow"); 
+						  var len = selectedRowIds.length;
+for(var i = 0;i < len ;i ++) {
+ $("[*[grid_selector_ID]*]").jqGrid("delRowData", selectedRowIds[0]);
+						  
+}
+ var savejieguo =$('[*[grid_selector_ID]*]').jqGrid('saveRow', $('[*[grid_selector_ID]*]').attr('lastsel_yhb'));
+		 $('[*[grid_selector_ID]*]').attr('lastsel_yhb',"-999999");				  
+   }, 
+   position:"first"
+});
+
+
+
+ jQuery("[*[grid_selector_ID]*]").navButtonAdd("[*[pager_selector_ID]*]",{
+   caption:"", 
+   title : "新增",
+   buttonicon:"ace-icon fa fa-plus-circle purple", 
+   onClickButton: function(e){ 
+           
+
+		   /*
+                        var dialog_title = "新增--[*[FS_title]*]";
+                        e.preventDefault();
+						$("#iframforsubtab").attr("src","[*[FS_xinzenglianjie]*]");
+                        dialog_tanchuang_forsubtable = $("#dialog-message-forsubtable-addedit").removeClass('hide').dialog({
+                            modal: true,
+                            title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-bars'></i>  "  + dialog_title + "</h4></div>",
+                            width: '80%' 
+                          
+                        });
+         */
+
+	 
+	 
+
+            var savejieguo = $('[*[grid_selector_ID]*]').jqGrid('saveRow', $('[*[grid_selector_ID]*]').attr('lastsel_yhb'));
+		
+			if($('[*[grid_selector_ID]*]').attr('lastsel_yhb') == "-999999" || savejieguo)
+				{
+
+				    var colModel = $("[*[grid_selector_ID]*]").jqGrid().getGridParam("colModel") ;  
+    var cellLenth = colModel.length ;  
+ 
+    var newRow = JSON.stringify(colModel);  
+ 
+    var newrowid = '自动生成'+randomnumber();
+ 
+    //将新行追加到表格头部  
+    $("[*[grid_selector_ID]*]").jqGrid("addRowData", newrowid,newRow , "last");  
+
+
+
+            $('[*[grid_selector_ID]*]').jqGrid('restoreRow', $('[*[grid_selector_ID]*]').attr('lastsel_yhb'));
+			$('[*[grid_selector_ID]*]').jqGrid('setSelection',newrowid,false);
+            $('[*[grid_selector_ID]*]').jqGrid('editRow', newrowid,    {    keys : false });
+	        $('[*[grid_selector_ID]*]').attr('lastsel_yhb',newrowid);
+        
+			}
+			     
+
+ 
+   }, 
+   position:"first"
+});
+
+
+            //其他界面相关辅助代码
+            $(window).triggerHandler('resize.jqGrid');//trigger window resize to make the grid get the correct size
+
+
+ 
+function subtab_datepicker_elem(value, options) {
+ //alert(value);
+	var el = document.createElement("input");
+    el.type="text";
+    el.value = value;
+	el.class = 'date-picker';
+    $(el).datepicker({ autoclose: true });
+	$(el).mask('9999-99-99');
+  return el;
+   
+};
+function subtab_datepicker_value(elem, operation, value) {
+
+ if (operation === 'get') {
+  return $(elem).val();
+ } else if (operation === 'set') {
+  $(elem).val(value);
+ 
+ }
+};
+
+
+
+ function subtab_tanchuang_elem(value, options) {
+ 
+     var el = document.createElement("div"); 
+     el.innerHTML = "<div class='form-group' style='margin:0px;line-height:0.5;'>  <label class='hidden' for='subtcid_"+options.DIDname+"'>"+options.DIDshowname+"</label>  <div class='input-group '><input class='form-control search-query' id='subtcid_"+options.DIDname+"'  type='text' title=''  value='"+value+"' "+options.FS_SPPZ_readonly+"  /><span class='input-group-btn'><button class='btn  btn-sm  searchopenyhbspgogo' type='button' id='searchopenyhbspgogo_subtcid_"+options.DIDname+"' title='"+options.s_FS_D_yinruzhi+"' guid='"+options.DIDeditspset+"' onclick='openeditdialog(null, $(this));'></span><span class='ace-icon fa fa-search icon-on-right bigger-110'></span> </button></div>  <div class='col-sm-12 no-padding-left' id='show_searchopenyhbspgogo_subtcid_"+options.DIDname+"'></div>  </div>"; 
+  
+  return el;
+   
+};
+function subtab_tanchuang_value(elem, operation, value) {
+
+ if (operation === 'get') {
+ 
+  return $(elem).find('input').val();
+ } else if (operation === 'set') {
+  $(elem).find('input').val(value);
+ 
+ }
+};
+
+
+
+ 
+ function subtab_spinner_elem(value, options) {
+ //alert(value);
+	var el = document.createElement("input");
+    el.type="text";
+    el.value = value;
+ 
+ 
+  return el;
+   
+};
+function subtab_spinner_value(elem, operation, value) {
+
+ if (operation === 'get') {
+ 
+  return $(elem).val();
+ } else if (operation === 'set') {
+  $(elem).val(value);
+ 
+ }
+};
+
+ function subtab_xiala_elem(value, options) {
+ //alert(value);
+	var el = document.createElement("select");
+    alert(value);
+ 
+ 
+  return el;
+   
+};
+
+
+ function ck_erweixiaoshu(value, colname) {
+
+ var ckck = /^\d+(\.\d{1,2})?$/.test(value);
+    if (ckck) 
+     {  return [true,""];}
+        else { return [false,colname+":只能使用两位小数"];}
+          
+     
+};
+ 
