@@ -70,7 +70,12 @@
     <SortParentID>145</SortParentID>
     <SortParentPath>,145,</SortParentPath>
     <SortOrder>3</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_rzht.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_rzht.aspx</m_url_formenu_g>
     <SortNameTree>│├入住合同管理</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -82,7 +87,12 @@
     <SortParentID>145</SortParentID>
     <SortParentPath>,145,</SortParentPath>
     <SortOrder>4</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_tuizujilu.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_tuizujilu.aspx</m_url_formenu_g>
     <SortNameTree>│└退租管理</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -111,7 +121,12 @@
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
     <SortOrder>6</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_moneyZJSKD.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_moneyZJSKD.aspx</m_url_formenu_g>
     <SortNameTree>│├租金收款单</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-4</SortMoveDown>
@@ -427,7 +442,12 @@
     <SortParentID>43</SortParentID>
     <SortParentPath>,43,</SortParentPath>
     <SortOrder>30</SortOrder>
+    <m_url>/adminht/corepage/bas/list_fangzi.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/bas/edit_fangzi.aspx</m_url_formenu_g>
     <SortNameTree>│├房屋档案管理</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-4</SortMoveDown>
@@ -439,7 +459,12 @@
     <SortParentID>43</SortParentID>
     <SortParentPath>,43,</SortParentPath>
     <SortOrder>31</SortOrder>
+    <m_url>/adminht/corepage/bas/list_chengzuren.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/bas/edit_chengzuren.aspx</m_url_formenu_g>
     <SortNameTree>│├承租人管理</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-3</SortMoveDown>
