@@ -138,7 +138,12 @@
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
     <SortOrder>7</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_moneyYJSKD.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_moneyYJSKD.aspx</m_url_formenu_g>
     <SortNameTree>│├押金收款单</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-3</SortMoveDown>
@@ -150,7 +155,12 @@
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
     <SortOrder>8</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_moneyYJTHD.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_moneyYJTHD.aspx</m_url_formenu_g>
     <SortNameTree>│├押金退还单</SortNameTree>
     <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>-2</SortMoveDown>
@@ -162,7 +172,12 @@
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
     <SortOrder>9</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_moneyWYFSKD.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_moneyWYFSKD.aspx</m_url_formenu_g>
     <SortNameTree>│├物业费收款单</SortNameTree>
     <SortMoveUp>3</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -174,7 +189,12 @@
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
     <SortOrder>10</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_moneyQTTKD.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_moneyQTTKD.aspx</m_url_formenu_g>
     <SortNameTree>│└其他退款单</SortNameTree>
     <SortMoveUp>4</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -203,7 +223,12 @@
     <SortParentID>147</SortParentID>
     <SortParentPath>,147,</SortParentPath>
     <SortOrder>12</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_wxqq.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_wxqq.aspx</m_url_formenu_g>
     <SortNameTree>│├维修申请</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -215,7 +240,12 @@
     <SortParentID>147</SortParentID>
     <SortParentPath>,147,</SortParentPath>
     <SortOrder>13</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_wxjl.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_wxjl.aspx</m_url_formenu_g>
     <SortNameTree>│└维修记录</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
