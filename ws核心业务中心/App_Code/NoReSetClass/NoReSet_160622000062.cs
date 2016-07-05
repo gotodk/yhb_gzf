@@ -64,12 +64,21 @@ public class NoReSet_160622000062
         param.Add("@M_HID", ht_forUI["M_HID"].ToString());
         param.Add("@Mpz", ht_forUI["Mpz"].ToString());
         param.Add("@Mje", ht_forUI["Mje"].ToString());
+        if (ht_forUI["Mxiaciriqi"].ToString() == "")
+        {
+            param.Add("@Mxiaciriqi", DBNull.Value);
+        }
+        else
+        {
+            param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
+        }
+        
         param.Add("@Mbeizhu", ht_forUI["Mbeizhu"].ToString());
         param.Add("@Mchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
 
 
 
-        alsql.Add("INSERT INTO ZZZ_moneyZJSKD(MID, M_HID, Mpz, Mje, Mbeizhu, Mzt, Mchuangjianren) VALUES(@MID, @M_HID, @Mpz, @Mje, @Mbeizhu, @Mzt, @Mchuangjianren)");
+        alsql.Add("INSERT INTO ZZZ_moneyZJSKD(MID, M_HID, Mpz, Mje,Mxiaciriqi, Mbeizhu, Mzt, Mchuangjianren) VALUES(@MID, @M_HID, @Mpz, @Mje,@Mxiaciriqi, @Mbeizhu, @Mzt, @Mchuangjianren)");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -123,9 +132,17 @@ public class NoReSet_160622000062
         param.Add("@M_HID", ht_forUI["M_HID"].ToString());
         param.Add("@Mpz", ht_forUI["Mpz"].ToString());
         param.Add("@Mje", ht_forUI["Mje"].ToString());
+        if (ht_forUI["Mxiaciriqi"].ToString() == "")
+        {
+            param.Add("@Mxiaciriqi", DBNull.Value);
+        }
+        else
+        {
+            param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
+        }
         param.Add("@Mbeizhu", ht_forUI["Mbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_moneyZJSKD SET M_HID=@M_HID,Mpz=@Mpz,Mje=@Mje,Mbeizhu=@Mbeizhu where MID=@MID and Mzt='草稿' ");
+        alsql.Add("UPDATE ZZZ_moneyZJSKD SET M_HID=@M_HID,Mpz=@Mpz,Mje=@Mje,Mxiaciriqi=@Mxiaciriqi,Mbeizhu=@Mbeizhu where MID=@MID and Mzt='草稿' ");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);

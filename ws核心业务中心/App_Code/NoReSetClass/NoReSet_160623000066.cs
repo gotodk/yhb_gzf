@@ -64,7 +64,14 @@ public class NoReSet_160623000066
         param.Add("@M_HID", ht_forUI["M_HID"].ToString());
         param.Add("@Mpz", ht_forUI["Mpz"].ToString());
         param.Add("@Mje", ht_forUI["Mje"].ToString());
-        param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
+        if (ht_forUI["Mxiaciriqi"].ToString() == "")
+        {
+            param.Add("@Mxiaciriqi", DBNull.Value);
+        }
+        else
+        {
+            param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
+        }
         param.Add("@Mxiangmu", ht_forUI["Mxiangmu"].ToString());
         param.Add("@Myouxiao1", ht_forUI["Myouxiao1"].ToString());
         param.Add("@Myouxiao2", ht_forUI["Myouxiao2"].ToString());
@@ -127,7 +134,14 @@ public class NoReSet_160623000066
         param.Add("@M_HID", ht_forUI["M_HID"].ToString());
         param.Add("@Mpz", ht_forUI["Mpz"].ToString());
         param.Add("@Mje", ht_forUI["Mje"].ToString());
-        param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
+        if (ht_forUI["Mxiaciriqi"].ToString() == "")
+        {
+            param.Add("@Mxiaciriqi", DBNull.Value);
+        }
+        else
+        {
+            param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
+        }
         param.Add("@Mxiangmu", ht_forUI["Mxiangmu"].ToString());
         param.Add("@Myouxiao1", ht_forUI["Myouxiao1"].ToString());
         param.Add("@Myouxiao2", ht_forUI["Myouxiao2"].ToString());

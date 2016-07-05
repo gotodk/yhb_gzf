@@ -59,21 +59,22 @@ public class NoReSet_160622000060
         //以可排序guid方式生成
         //HID, Hzhuangtai, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hyjrq, Hqiandingriqi, Hbeizhu, Hchuangjianren
         string guid = CombGuid.GetMewIdFormSequence("ZZZ_RZHT");
-        param.Add("@HID", guid);
+        param.Add("@HID", ht_forUI["HID"].ToString());
         param.Add("@Hzhuangtai", "草稿");
         param.Add("@H_CID", ht_forUI["H_CID"].ToString());
         param.Add("@H_FID", ht_forUI["H_FID"].ToString());
+        param.Add("@Hshengxiaoriqi", ht_forUI["Hshengxiaoriqi"].ToString());
         param.Add("@Hdaoqiriqi", ht_forUI["Hdaoqiriqi"].ToString());
         param.Add("@Hfkfs", ht_forUI["Hfkfs"].ToString());
         param.Add("@Hje", ht_forUI["Hje"].ToString());
-        param.Add("@Hyjrq", ht_forUI["Hyjrq"].ToString());
+        
         param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
         param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
         param.Add("@Hchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
 
 
 
-        alsql.Add("INSERT INTO ZZZ_RZHT(HID, Hzhuangtai, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hyjrq, Hqiandingriqi, Hbeizhu, Hchuangjianren) VALUES(@HID, @Hzhuangtai, @H_CID, @H_FID, @Hdaoqiriqi, @Hfkfs, @Hje, @Hyjrq, @Hqiandingriqi, @Hbeizhu, @Hchuangjianren)");
+        alsql.Add("INSERT INTO ZZZ_RZHT(HID, Hzhuangtai, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hshengxiaoriqi, Hqiandingriqi, Hbeizhu, Hchuangjianren) VALUES(@HID, @Hzhuangtai, @H_CID, @H_FID, @Hdaoqiriqi, @Hfkfs, @Hje, @Hshengxiaoriqi, @Hqiandingriqi, @Hbeizhu, @Hchuangjianren)");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -126,14 +127,15 @@ public class NoReSet_160622000060
         param.Add("@HID", ht_forUI["idforedit"].ToString());
         param.Add("@H_CID", ht_forUI["H_CID"].ToString());
         param.Add("@H_FID", ht_forUI["H_FID"].ToString());
+        param.Add("@Hshengxiaoriqi", ht_forUI["Hshengxiaoriqi"].ToString());
         param.Add("@Hdaoqiriqi", ht_forUI["Hdaoqiriqi"].ToString());
         param.Add("@Hfkfs", ht_forUI["Hfkfs"].ToString());
         param.Add("@Hje", ht_forUI["Hje"].ToString());
-        param.Add("@Hyjrq", ht_forUI["Hyjrq"].ToString());
+ 
         param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
         param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_RZHT SET  H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hyjrq=@Hyjrq, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu where HID=@HID and Hzhuangtai='草稿' ");
+        alsql.Add("UPDATE ZZZ_RZHT SET  H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu where HID=@HID and Hzhuangtai='草稿' ");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);

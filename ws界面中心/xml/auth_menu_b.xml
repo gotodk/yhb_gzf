@@ -375,12 +375,17 @@
   <菜单表>
     <ID>1179</ID>
     <SortID>171</SortID>
-    <SortName>消息记录</SortName>
+    <SortName>预警记录</SortName>
     <SortParentID>165</SortParentID>
     <SortParentPath>,165,</SortParentPath>
     <SortOrder>23</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
-    <SortNameTree>│├消息记录</SortNameTree>
+    <m_url_formenu_g />
+    <SortNameTree>│├预警记录</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-5</SortMoveDown>
   </菜单表>
