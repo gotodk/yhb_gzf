@@ -62,6 +62,7 @@ public class NoReSet_160622000059
         param.Add("@CID", guid);
         param.Add("@Czhuangtai", "未承租");
         param.Add("@Cxingming", ht_forUI["Cxingming"].ToString());
+        param.Add("@Csqbbh", ht_forUI["Csqbbh"].ToString());
         param.Add("@Cshenfenzheng", ht_forUI["Cshenfenzheng"].ToString());
         param.Add("@Clianxifangshi", ht_forUI["Clianxifangshi"].ToString());
         param.Add("@Cgongzuodanwei", ht_forUI["Cgongzuodanwei"].ToString());
@@ -70,7 +71,7 @@ public class NoReSet_160622000059
 
 
 
-        alsql.Add("INSERT INTO ZZZ_chengzuren(CID, Czhuangtai, Cxingming, Cshenfenzheng, Clianxifangshi, Cgongzuodanwei, Cczqx, Cchuangjianren) VALUES(@CID, @Czhuangtai, @Cxingming, @Cshenfenzheng, @Clianxifangshi, @Cgongzuodanwei, @Cczqx, @Cchuangjianren)");
+        alsql.Add("INSERT INTO ZZZ_chengzuren(CID, Czhuangtai, Cxingming,Csqbbh, Cshenfenzheng, Clianxifangshi, Cgongzuodanwei, Cczqx, Cchuangjianren) VALUES(@CID, @Czhuangtai, @Cxingming,@Csqbbh, @Cshenfenzheng, @Clianxifangshi, @Cgongzuodanwei, @Cczqx, @Cchuangjianren)");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -122,12 +123,13 @@ public class NoReSet_160622000059
         Hashtable param = new Hashtable();
         param.Add("@CID", ht_forUI["idforedit"].ToString());
         param.Add("@Cxingming", ht_forUI["Cxingming"].ToString());
+        param.Add("@Csqbbh", ht_forUI["Csqbbh"].ToString());
         param.Add("@Cshenfenzheng", ht_forUI["Cshenfenzheng"].ToString());
         param.Add("@Clianxifangshi", ht_forUI["Clianxifangshi"].ToString());
         param.Add("@Cgongzuodanwei", ht_forUI["Cgongzuodanwei"].ToString());
         param.Add("@Cczqx", ht_forUI["Cczqx"].ToString());
 
-        alsql.Add("UPDATE ZZZ_chengzuren SET  Cxingming=@Cxingming, Cshenfenzheng=@Cshenfenzheng, Clianxifangshi=@Clianxifangshi, Cgongzuodanwei=@Cgongzuodanwei, Cczqx=@Cczqx where CID=@CID ");
+        alsql.Add("UPDATE ZZZ_chengzuren SET  Cxingming=@Cxingming,Csqbbh=@Csqbbh, Cshenfenzheng=@Cshenfenzheng, Clianxifangshi=@Clianxifangshi, Cgongzuodanwei=@Cgongzuodanwei, Cczqx=@Cczqx where CID=@CID ");
 
          
 

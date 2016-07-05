@@ -67,13 +67,20 @@ public class NoReSet_160622000058
         param.Add("@Fjzmj", ht_forUI["Fjzmj"].ToString());
         param.Add("@Fhxjg", ht_forUI["Fhxjg"].ToString());
         param.Add("@Fshineisheshi", ht_forUI["Fshineisheshi"].ToString());
-        param.Add("@Fchewei", ht_forUI["Fchewei"].ToString());
-        param.Add("@Fsssbpz", ht_forUI["Fsssbpz"].ToString());
+        //param.Add("@Fchewei", ht_forUI["Fchewei"].ToString());
+
+        if (ht_forUI.Contains("allpath_file1"))
+        { param.Add("@Fsssbpz", ht_forUI["allpath_file1"].ToString()); }
+        else
+        {
+            param.Add("@Fsssbpz", "");
+        }
+
         param.Add("@Fchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
 
 
 
-        alsql.Add("INSERT INTO ZZZ_fangzi(FID, Fzhuangtai, Fdiqu, Fzuoluo, Fjcsj, Fjzmj, Fhxjg, Fshineisheshi, Fchewei, Fsssbpz, Fchuangjianren ) VALUES(@FID, @Fzhuangtai, @Fdiqu, @Fzuoluo, @Fjcsj, @Fjzmj, @Fhxjg, @Fshineisheshi, @Fchewei, @Fsssbpz, @Fchuangjianren )");
+        alsql.Add("INSERT INTO ZZZ_fangzi(FID, Fzhuangtai, Fdiqu, Fzuoluo, Fjcsj, Fjzmj, Fhxjg, Fshineisheshi, Fsssbpz, Fchuangjianren ) VALUES(@FID, @Fzhuangtai, @Fdiqu, @Fzuoluo, @Fjcsj, @Fjzmj, @Fhxjg, @Fshineisheshi, @Fsssbpz, @Fchuangjianren )");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -130,10 +137,15 @@ public class NoReSet_160622000058
         param.Add("@Fjzmj", ht_forUI["Fjzmj"].ToString());
         param.Add("@Fhxjg", ht_forUI["Fhxjg"].ToString());
         param.Add("@Fshineisheshi", ht_forUI["Fshineisheshi"].ToString());
-        param.Add("@Fchewei", ht_forUI["Fchewei"].ToString());
-        param.Add("@Fsssbpz", ht_forUI["Fsssbpz"].ToString());
+        //param.Add("@Fchewei", ht_forUI["Fchewei"].ToString());
+        if (ht_forUI.Contains("allpath_file1"))
+        { param.Add("@Fsssbpz", ht_forUI["allpath_file1"].ToString()); }
+        else
+        {
+            param.Add("@Fsssbpz", "");
+        }
 
-        alsql.Add("UPDATE ZZZ_fangzi SET  Fdiqu=@Fdiqu, Fzuoluo=@Fzuoluo, Fjcsj=@Fjcsj, Fjzmj=@Fjzmj, Fhxjg=@Fhxjg, Fshineisheshi=@Fshineisheshi, Fchewei=@Fchewei, Fsssbpz=@Fsssbpz where FID=@FID ");
+        alsql.Add("UPDATE ZZZ_fangzi SET  Fdiqu=@Fdiqu, Fzuoluo=@Fzuoluo, Fjcsj=@Fjcsj, Fjzmj=@Fjzmj, Fhxjg=@Fhxjg, Fshineisheshi=@Fshineisheshi, Fsssbpz=@Fsssbpz where FID=@FID ");
 
          
 

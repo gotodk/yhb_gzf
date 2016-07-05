@@ -64,6 +64,7 @@ public class NoReSet_160623000066
         param.Add("@M_HID", ht_forUI["M_HID"].ToString());
         param.Add("@Mpz", ht_forUI["Mpz"].ToString());
         param.Add("@Mje", ht_forUI["Mje"].ToString());
+        param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
         param.Add("@Mxiangmu", ht_forUI["Mxiangmu"].ToString());
         param.Add("@Myouxiao1", ht_forUI["Myouxiao1"].ToString());
         param.Add("@Myouxiao2", ht_forUI["Myouxiao2"].ToString());
@@ -72,7 +73,7 @@ public class NoReSet_160623000066
 
 
 
-        alsql.Add("INSERT INTO ZZZ_moneyWYFSKD(MID, M_HID, Mpz, Mje,Mxiangmu,Myouxiao1,Myouxiao2, Mbeizhu, Mzt, Mchuangjianren) VALUES(@MID, @M_HID, @Mpz, @Mje,@Mxiangmu,@Myouxiao1,@Myouxiao2, @Mbeizhu, @Mzt, @Mchuangjianren)");
+        alsql.Add("INSERT INTO ZZZ_moneyWYFSKD(MID, M_HID, Mpz, Mje,Mxiaciriqi,Mxiangmu,Myouxiao1,Myouxiao2, Mbeizhu, Mzt, Mchuangjianren) VALUES(@MID, @M_HID, @Mpz, @Mje,@Mxiaciriqi,@Mxiangmu,@Myouxiao1,@Myouxiao2, @Mbeizhu, @Mzt, @Mchuangjianren)");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -126,12 +127,13 @@ public class NoReSet_160623000066
         param.Add("@M_HID", ht_forUI["M_HID"].ToString());
         param.Add("@Mpz", ht_forUI["Mpz"].ToString());
         param.Add("@Mje", ht_forUI["Mje"].ToString());
+        param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
         param.Add("@Mxiangmu", ht_forUI["Mxiangmu"].ToString());
         param.Add("@Myouxiao1", ht_forUI["Myouxiao1"].ToString());
         param.Add("@Myouxiao2", ht_forUI["Myouxiao2"].ToString());
         param.Add("@Mbeizhu", ht_forUI["Mbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_moneyWYFSKD SET M_HID=@M_HID,Mpz=@Mpz,Mje=@Mje,Mxiangmu=@Mxiangmu,Myouxiao1=@Myouxiao1,Myouxiao2=@Myouxiao2,Mbeizhu=@Mbeizhu where MID=@MID and Mzt='草稿' ");
+        alsql.Add("UPDATE ZZZ_moneyWYFSKD SET M_HID=@M_HID,Mpz=@Mpz,Mje=@Mje,Mxiaciriqi=@Mxiaciriqi,Mxiangmu=@Mxiangmu,Myouxiao1=@Myouxiao1,Myouxiao2=@Myouxiao2,Mbeizhu=@Mbeizhu where MID=@MID and Mzt='草稿' ");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);

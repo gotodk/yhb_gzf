@@ -421,31 +421,31 @@
     <SortMoveDown>-2</SortMoveDown>
   </菜单表>
   <菜单表>
-    <ID>1175</ID>
-    <SortID>167</SortID>
-    <SortName>物业费到期预警</SortName>
-    <SortParentID>165</SortParentID>
-    <SortParentPath>,165,</SortParentPath>
-    <SortOrder>27</SortOrder>
-    <m_show>不隐藏</m_show>
-    <SortNameTree>│├物业费到期预警</SortNameTree>
-    <SortMoveUp>4</SortMoveUp>
-    <SortMoveDown>-1</SortMoveDown>
-  </菜单表>
-  <菜单表>
     <ID>1174</ID>
     <SortID>166</SortID>
     <SortName>合同到期预警</SortName>
     <SortParentID>165</SortParentID>
     <SortParentPath>,165,</SortParentPath>
-    <SortOrder>28</SortOrder>
+    <SortOrder>27</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>│└合同到期预警</SortNameTree>
+    <SortNameTree>│├合同到期预警</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1180</ID>
+    <SortID>172</SortID>
+    <SortName>车位费到期预警</SortName>
+    <SortParentID>165</SortParentID>
+    <SortParentPath>,165,</SortParentPath>
+    <SortOrder>28</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└车位费到期预警</SortNameTree>
     <SortMoveUp>5</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
