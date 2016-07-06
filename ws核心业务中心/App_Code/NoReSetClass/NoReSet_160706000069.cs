@@ -9,7 +9,7 @@ using FMPublicClass;
 using System.Numerics;
 using System.Web.Script.Serialization;
 
-public class NoReSet_160622000059
+public class NoReSet_160706000069
 {
  
 
@@ -57,49 +57,24 @@ public class NoReSet_160622000059
         ArrayList alsql = new ArrayList();
         Hashtable param = new Hashtable();
         //以可排序guid方式生成
-        //CID, Czhuangtai, Cxingming, Cshenfenzheng, Clianxifangshi, Cgongzuodanwei, Cczqx, Cchuangjianren
-        string guid = CombGuid.GetMewIdFormSequence("ZZZ_chengzuren");
-        param.Add("@CID", guid);
-        param.Add("@Czhuangtai", "未承租");
-        param.Add("@Cxingming", ht_forUI["Cxingming"].ToString());
-        param.Add("@Csqbbh", ht_forUI["Csqbbh"].ToString());
-        param.Add("@Cshenfenzheng", ht_forUI["Cshenfenzheng"].ToString());
-        param.Add("@Clianxifangshi", ht_forUI["Clianxifangshi"].ToString());
-        param.Add("@Cgongzuodanwei", ht_forUI["Cgongzuodanwei"].ToString());
-        param.Add("@Cczqx", ht_forUI["Cczqx"].ToString());
-        param.Add("@Cchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
+        //HID, Hzhuangtai, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hyjrq, Hqiandingriqi, Hbeizhu, Hchuangjianren
+        string guid = CombGuid.GetMewIdFormSequence("ZZZ_HTwuye");
+        param.Add("@HID", ht_forUI["HID"].ToString());
+        param.Add("@H_CID", ht_forUI["H_CID"].ToString());
+        param.Add("@H_FID", ht_forUI["H_FID"].ToString());
+        param.Add("@Hshengxiaoriqi", ht_forUI["Hshengxiaoriqi"].ToString());
+        param.Add("@Hdaoqiriqi", ht_forUI["Hdaoqiriqi"].ToString());
+        param.Add("@Hfkfs", ht_forUI["Hfkfs"].ToString());
+        param.Add("@Hje", ht_forUI["Hje"].ToString());
+        
+        param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
+        param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
+        param.Add("@Hchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
 
 
 
-        alsql.Add("INSERT INTO ZZZ_chengzuren(CID, Czhuangtai, Cxingming,Csqbbh, Cshenfenzheng, Clianxifangshi, Cgongzuodanwei, Cczqx, Cchuangjianren) VALUES(@CID, @Czhuangtai, @Cxingming,@Csqbbh, @Cshenfenzheng, @Clianxifangshi, @Cgongzuodanwei, @Cczqx, @Cchuangjianren)");
-
-        //遍历子表， 插入 
-        string zibiao_gts_id = "grid-table-subtable-160706001076";
-        DataTable subdt = jsontodatatable.ToDataTable(ht_forUI[zibiao_gts_id].ToString());
-        //必须验证js脚本获取的数量和c#反序列化获取的数量一致才能继续。防止出错
-        if (ht_forUI[zibiao_gts_id + "_fcjsq"].ToString() != subdt.Rows.Count.ToString())
-        {
-            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "子表数据量与获取量不相符，系统出现问题。";
-            return dsreturn;
-        }
-
-        param.Add("@sub_" + "MainID", guid); //隶属主表id
-
-        for (int i = 0; i < subdt.Rows.Count; i++)
-        {
-            param.Add("@sub_" + "zgid" + "_" + i, CombGuid.GetMewIdFormSequence("ZZZ_chengzuren_zige"));
-
-            param.Add("@sub_" + "zgnianxian" + "_" + i, subdt.Rows[i]["年限"].ToString());
-            param.Add("@sub_" + "zgbegin" + "_" + i, subdt.Rows[i]["资格开始日期"].ToString());
-            param.Add("@sub_" + "zgend" + "_" + i, subdt.Rows[i]["资格结束日期"].ToString());
-            param.Add("@sub_" + "zgbz" + "_" + i, subdt.Rows[i]["资格备注"].ToString());
+        alsql.Add("INSERT INTO ZZZ_HTwuye(HID, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hshengxiaoriqi, Hqiandingriqi, Hbeizhu, Hchuangjianren) VALUES(@HID, @H_CID, @H_FID, @Hdaoqiriqi, @Hfkfs, @Hje, @Hshengxiaoriqi, @Hqiandingriqi, @Hbeizhu, @Hchuangjianren)");
  
-            string INSERTsql = "INSERT INTO ZZZ_chengzuren_zige ( zgid, zg_CID, zgnianxian, zgbegin, zgend, zgbz ) VALUES(@sub_" + "zgid" + "_" + i + ", @sub_MainID, @sub_" + "zgnianxian" + "_" + i + ", @sub_" + "zgbegin" + "_" + i + ", @sub_" + "zgend" + "_" + i + ", @sub_" + "zgbz" + "_" + i + " )";
-            alsql.Add(INSERTsql);
-        }
-   
-        alsql.Add("update ZZZ_chengzuren set Cczqx=(select top 1 zgend from ZZZ_chengzuren_zige where zg_CID=@sub_MainID order by zgend desc  ) where CID=@sub_MainID");
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
 
@@ -148,51 +123,19 @@ public class NoReSet_160622000059
         Hashtable return_ht = new Hashtable();
         ArrayList alsql = new ArrayList();
         Hashtable param = new Hashtable();
-        param.Add("@CID", ht_forUI["idforedit"].ToString());
-        param.Add("@Cxingming", ht_forUI["Cxingming"].ToString());
-        param.Add("@Csqbbh", ht_forUI["Csqbbh"].ToString());
-        param.Add("@Cshenfenzheng", ht_forUI["Cshenfenzheng"].ToString());
-        param.Add("@Clianxifangshi", ht_forUI["Clianxifangshi"].ToString());
-        param.Add("@Cgongzuodanwei", ht_forUI["Cgongzuodanwei"].ToString());
-        param.Add("@Cczqx", ht_forUI["Cczqx"].ToString());
+        param.Add("@HID", ht_forUI["idforedit"].ToString());
+        param.Add("@H_CID", ht_forUI["H_CID"].ToString());
+        param.Add("@H_FID", ht_forUI["H_FID"].ToString());
+        param.Add("@Hshengxiaoriqi", ht_forUI["Hshengxiaoriqi"].ToString());
+        param.Add("@Hdaoqiriqi", ht_forUI["Hdaoqiriqi"].ToString());
+        param.Add("@Hfkfs", ht_forUI["Hfkfs"].ToString());
+        param.Add("@Hje", ht_forUI["Hje"].ToString());
+ 
+        param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
+        param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_chengzuren SET  Cxingming=@Cxingming,Csqbbh=@Csqbbh, Cshenfenzheng=@Cshenfenzheng, Clianxifangshi=@Clianxifangshi, Cgongzuodanwei=@Cgongzuodanwei, Cczqx=@Cczqx where CID=@CID ");
-
-
-
-        //遍历子表，先删除，再插入，已有主键的不重新生成。
-        string zibiao_gts_id = "grid-table-subtable-160706001076";
-        DataTable subdt = jsontodatatable.ToDataTable(ht_forUI[zibiao_gts_id].ToString());
-        //必须验证js脚本获取的数量和c#反序列化获取的数量一致才能继续。防止出错
-        if (ht_forUI[zibiao_gts_id + "_fcjsq"].ToString() != subdt.Rows.Count.ToString())
-        {
-            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "子表数据量与获取量不相符，系统出现问题。";
-            return dsreturn;
-        }
-        param.Add("@sub_" + "MainID", ht_forUI["idforedit"].ToString()); //隶属主表id
-        alsql.Add("delete ZZZ_chengzuren_zige where  zg_CID = @sub_" + "MainID");
-        for (int i = 0; i < subdt.Rows.Count; i++)
-        {
-            if (subdt.Rows[i]["隐藏编号"].ToString().Trim() == "")
-            {
-                param.Add("@sub_" + "zgid" + "_" + i, CombGuid.GetMewIdFormSequence("ZZZ_chengzuren_zige"));
-            }
-            else
-            {
-                param.Add("@sub_" + "zgid" + "_" + i, subdt.Rows[i]["隐藏编号"].ToString());
-            }
-            param.Add("@sub_" + "zgnianxian" + "_" + i, subdt.Rows[i]["年限"].ToString());
-            param.Add("@sub_" + "zgbegin" + "_" + i, subdt.Rows[i]["资格开始日期"].ToString());
-            param.Add("@sub_" + "zgend" + "_" + i, subdt.Rows[i]["资格结束日期"].ToString());
-            param.Add("@sub_" + "zgbz" + "_" + i, subdt.Rows[i]["资格备注"].ToString());
-
-
-            string INSERTsql = "INSERT INTO ZZZ_chengzuren_zige ( zgid, zg_CID, zgnianxian, zgbegin, zgend, zgbz ) VALUES(@sub_" + "zgid" + "_" + i + ", @sub_MainID, @sub_" + "zgnianxian" + "_" + i + ", @sub_" + "zgbegin" + "_" + i + ", @sub_" + "zgend" + "_" + i + ", @sub_" + "zgbz" + "_" + i + " )";
-            alsql.Add(INSERTsql);
-        }
-
-        alsql.Add("update ZZZ_chengzuren set Cczqx=(select top 1 zgend from ZZZ_chengzuren_zige where zg_CID=@sub_MainID order by zgend desc  ) where CID=@sub_MainID");
+        alsql.Add("UPDATE ZZZ_HTwuye SET  H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu where HID=@HID ");
+ 
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
 
@@ -246,9 +189,9 @@ public class NoReSet_160622000059
         I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
         Hashtable return_ht = new Hashtable();
         Hashtable param = new Hashtable();
-        param.Add("@CID", ht_forUI["idforedit"].ToString());
+        param.Add("@HID", ht_forUI["idforedit"].ToString());
 
-        return_ht = I_DBL.RunParam_SQL("select top 1 * from View_ZZZ_chengzuren_ex where CID=@CID", "数据记录", param);
+        return_ht = I_DBL.RunParam_SQL("select top 1 * from View_ZZZ_HTwuye_ex where HID=@HID", "数据记录", param);
 
         if ((bool)(return_ht["return_float"]))
         {

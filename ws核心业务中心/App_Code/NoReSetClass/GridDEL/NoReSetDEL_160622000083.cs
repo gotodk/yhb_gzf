@@ -114,7 +114,7 @@ public class NoReSetDEL_160622000083
                 {
                     param.Add("@MID_" + d, ids[d]);
                     alsql.Add("UPDATE ZZZ_moneyZJSKD SET  Mzt='生效'  where MID =@MID_" + d);
-          
+                    alsql.Add("UPDATE ZZZ_RZHT SET  Hyjrq=(select top 1 Mxiaciriqi from ZZZ_moneyZJSKD where MID =@MID_" + d + ")  where HID =(select top 1 M_HID from ZZZ_moneyZJSKD where MID =@MID_" + d + ")");
                 }
 
             }

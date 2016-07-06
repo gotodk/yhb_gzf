@@ -181,3 +181,47 @@
 			
 			})
 		</script>
+
+
+
+
+         <!-- **********自定义预警弹窗脚本******** -->
+     <script type="text/javascript">
+         var dialog_tanchuang_zdy_yujing = null;
+         function openeditdialoggogozdy_yujing() {
+             dialog_tanchuang_zdy_yujing = $("#dialog-message-yujing").removeClass('hide').dialog({
+                 modal: true,
+                 title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-check'></i> 预警信息</h4></div>",
+                 width: '60%',
+                 buttons: [
+                     
+                     {
+                         text: "  确认  ",
+                         "class": "btn btn-primary btn-xs querenyinruanniu",
+                         click: function () {
+                             $(this).dialog("close");
+                         }
+                     }
+                 ]
+             });
+         }
+
+         jQuery(function ($) {
+
+ 
+             var htmlobj = $.ajax({ url: "/adminht/corepage/yewu/yujingajax.aspx", async: false });
+            
+             if (htmlobj.responseText != null && htmlobj.responseText != "")
+             {
+                 $("#xianshiquyu_yujing").html(htmlobj.responseText);
+                 openeditdialoggogozdy_yujing();
+             }
+             
+
+             
+         });
+
+     
+
+
+     </script>

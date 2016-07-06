@@ -78,7 +78,7 @@
     <m_url_formenu_g>/adminht/corepage/yewu/edit_rzht.aspx</m_url_formenu_g>
     <SortNameTree>│├入住合同管理</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
-    <SortMoveDown>-1</SortMoveDown>
+    <SortMoveDown>-2</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>1158</ID>
@@ -93,8 +93,25 @@
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/yewu/edit_tuizujilu.aspx</m_url_formenu_g>
-    <SortNameTree>│└退租管理</SortNameTree>
+    <SortNameTree>│├退租管理</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>1182</ID>
+    <SortID>174</SortID>
+    <SortName>车位合同管理</SortName>
+    <SortParentID>145</SortParentID>
+    <SortParentPath>,145,</SortParentPath>
+    <SortOrder>5</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_htchewei.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_htchewei.aspx</m_url_formenu_g>
+    <SortNameTree>│└车位合同管理</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -103,7 +120,7 @@
     <SortName>账目管理</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>5</SortOrder>
+    <SortOrder>6</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -120,7 +137,7 @@
     <SortName>租金收款单</SortName>
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
-    <SortOrder>6</SortOrder>
+    <SortOrder>7</SortOrder>
     <m_url>/adminht/corepage/yewu/list_moneyZJSKD.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -137,7 +154,7 @@
     <SortName>押金收款单</SortName>
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
-    <SortOrder>7</SortOrder>
+    <SortOrder>8</SortOrder>
     <m_url>/adminht/corepage/yewu/list_moneyYJSKD.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -154,7 +171,7 @@
     <SortName>押金退还单</SortName>
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
-    <SortOrder>8</SortOrder>
+    <SortOrder>9</SortOrder>
     <m_url>/adminht/corepage/yewu/list_moneyYJTHD.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -171,7 +188,7 @@
     <SortName>物业费收款单</SortName>
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
-    <SortOrder>9</SortOrder>
+    <SortOrder>10</SortOrder>
     <m_url>/adminht/corepage/yewu/list_moneyWYFSKD.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -188,7 +205,7 @@
     <SortName>其他退款单</SortName>
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
-    <SortOrder>10</SortOrder>
+    <SortOrder>11</SortOrder>
     <m_url>/adminht/corepage/yewu/list_moneyQTTKD.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -205,7 +222,7 @@
     <SortName>物业管理</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>11</SortOrder>
+    <SortOrder>12</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -217,12 +234,29 @@
     <SortMoveDown>-6</SortMoveDown>
   </菜单表>
   <菜单表>
+    <ID>1181</ID>
+    <SortID>173</SortID>
+    <SortName>物业合同管理</SortName>
+    <SortParentID>147</SortParentID>
+    <SortParentPath>,147,</SortParentPath>
+    <SortOrder>13</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_htwuye.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/yewu/edit_htwuye.aspx</m_url_formenu_g>
+    <SortNameTree>│├物业合同管理</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
     <ID>1166</ID>
     <SortID>158</SortID>
     <SortName>维修申请</SortName>
     <SortParentID>147</SortParentID>
     <SortParentPath>,147,</SortParentPath>
-    <SortOrder>12</SortOrder>
+    <SortOrder>14</SortOrder>
     <m_url>/adminht/corepage/yewu/list_wxqq.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -230,7 +264,7 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/yewu/edit_wxqq.aspx</m_url_formenu_g>
     <SortNameTree>│├维修申请</SortNameTree>
-    <SortMoveUp>0</SortMoveUp>
+    <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -239,7 +273,7 @@
     <SortName>维修记录</SortName>
     <SortParentID>147</SortParentID>
     <SortParentPath>,147,</SortParentPath>
-    <SortOrder>13</SortOrder>
+    <SortOrder>15</SortOrder>
     <m_url>/adminht/corepage/yewu/list_wxjl.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -247,7 +281,7 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/yewu/edit_wxjl.aspx</m_url_formenu_g>
     <SortNameTree>│└维修记录</SortNameTree>
-    <SortMoveUp>1</SortMoveUp>
+    <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -256,7 +290,7 @@
     <SortName>知识管理</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>14</SortOrder>
+    <SortOrder>16</SortOrder>
     <m_url>/adminht/corepage/bas/list_zhishi.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -273,7 +307,7 @@
     <SortName>数据分析</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>15</SortOrder>
+    <SortOrder>17</SortOrder>
     <m_url>/adminht/fff.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -289,7 +323,7 @@
     <SortName>租户一览表</SortName>
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
-    <SortOrder>16</SortOrder>
+    <SortOrder>18</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├租户一览表</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
@@ -301,7 +335,7 @@
     <SortName>房屋一览表</SortName>
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
-    <SortOrder>17</SortOrder>
+    <SortOrder>19</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├房屋一览表</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
@@ -313,7 +347,7 @@
     <SortName>收款一览表</SortName>
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
-    <SortOrder>18</SortOrder>
+    <SortOrder>20</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├收款一览表</SortNameTree>
     <SortMoveUp>2</SortMoveUp>
@@ -325,7 +359,7 @@
     <SortName>租金汇总统计表</SortName>
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
-    <SortOrder>19</SortOrder>
+    <SortOrder>21</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├租金汇总统计表</SortNameTree>
     <SortMoveUp>3</SortMoveUp>
@@ -337,7 +371,7 @@
     <SortName>押金汇总统计表</SortName>
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
-    <SortOrder>20</SortOrder>
+    <SortOrder>22</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├押金汇总统计表</SortNameTree>
     <SortMoveUp>4</SortMoveUp>
@@ -349,7 +383,7 @@
     <SortName>物业费汇总统计表</SortName>
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
-    <SortOrder>21</SortOrder>
+    <SortOrder>23</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│└物业费汇总统计表</SortNameTree>
     <SortMoveUp>5</SortMoveUp>
@@ -361,7 +395,7 @@
     <SortName>预警功能</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>22</SortOrder>
+    <SortOrder>24</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -373,35 +407,6 @@
     <SortMoveDown>-3</SortMoveDown>
   </菜单表>
   <菜单表>
-    <ID>1179</ID>
-    <SortID>171</SortID>
-    <SortName>预警记录</SortName>
-    <SortParentID>165</SortParentID>
-    <SortParentPath>,165,</SortParentPath>
-    <SortOrder>23</SortOrder>
-    <m_url />
-    <m_tip />
-    <m_tag />
-    <m_ico />
-    <m_show>不隐藏</m_show>
-    <m_url_formenu_g />
-    <SortNameTree>│├预警记录</SortNameTree>
-    <SortMoveUp>0</SortMoveUp>
-    <SortMoveDown>-5</SortMoveDown>
-  </菜单表>
-  <菜单表>
-    <ID>1178</ID>
-    <SortID>170</SortID>
-    <SortName>预警配置</SortName>
-    <SortParentID>165</SortParentID>
-    <SortParentPath>,165,</SortParentPath>
-    <SortOrder>24</SortOrder>
-    <m_show>不隐藏</m_show>
-    <SortNameTree>│├预警配置</SortNameTree>
-    <SortMoveUp>1</SortMoveUp>
-    <SortMoveDown>-4</SortMoveDown>
-  </菜单表>
-  <菜单表>
     <ID>1177</ID>
     <SortID>169</SortID>
     <SortName>租户资格到期预警</SortName>
@@ -410,7 +415,7 @@
     <SortOrder>25</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├租户资格到期预警</SortNameTree>
-    <SortMoveUp>2</SortMoveUp>
+    <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-3</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -422,7 +427,7 @@
     <SortOrder>26</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├房租到期预警</SortNameTree>
-    <SortMoveUp>3</SortMoveUp>
+    <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-2</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -439,7 +444,7 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>│├合同到期预警</SortNameTree>
-    <SortMoveUp>4</SortMoveUp>
+    <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -451,7 +456,7 @@
     <SortOrder>28</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│└车位费到期预警</SortNameTree>
-    <SortMoveUp>5</SortMoveUp>
+    <SortMoveUp>3</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>

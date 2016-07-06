@@ -10,7 +10,7 @@ using System.Numerics;
 
 
 
-public class NoReSetDEL_160623000087
+public class NoReSetDEL_160706000091
 {
 
     /// <summary>
@@ -46,9 +46,9 @@ public class NoReSetDEL_160623000087
             string[] delids = ht_forUI["id"].ToString().Split(',');
             for (int d = 0; d < delids.Length; d++)
             {
-                param.Add("@MID_" + d, delids[d]);
+                param.Add("@HID_" + d, delids[d]);
 
-                alsql.Add("delete ZZZ_moneyWYFSKD  where Mzt='草稿' and  MID=@MID_" + d);
+                alsql.Add("delete ZZZ_HTchewei  where Hzhuangtai='草稿' and  HID=@HID_" + d);
             }
 
 
@@ -106,15 +106,14 @@ public class NoReSetDEL_160623000087
             ArrayList alsql = new ArrayList();
 
 
-            //更新数据表里的数据 
+            //删除数据表里的数据 
             string[] ids = ht_forUI["xuanzhongzhi"].ToString().Split(',');
             for (int d = 0; d < ids.Length; d++)
             {
                 if (ids[d].Trim() != "")
                 {
-                    param.Add("@MID_" + d, ids[d]);
-                    alsql.Add("UPDATE ZZZ_moneyWYFSKD SET  Mzt='生效'  where MID =@MID_" + d);
-                   
+                    param.Add("@HID_" + d, ids[d]);
+                    alsql.Add("UPDATE ZZZ_HTchewei SET  Hzhuangtai='生效'  where HID =@HID_" + d);
                 }
 
             }
@@ -126,7 +125,7 @@ public class NoReSetDEL_160623000087
             if ((bool)(return_ht["return_float"]))
             {
 
-                return "批量生效完成！";
+                return "批量使合同生效完成，相关状态已经变更！";
             }
 
         }
