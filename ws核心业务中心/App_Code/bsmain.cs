@@ -674,4 +674,65 @@ public class bsmain : System.Web.Services.WebService
 
 
 
+    /// <summary>
+    /// 全局报警数据获取
+    /// </summary>
+    /// <param name="uaid">UI端的参数</param>
+    /// <returns></returns>
+    [WebMethod(MessageName = "全局报警数据获取", Description = "全局报警数据获取")]
+    public DataSet GetAlertPub(string uaid)
+    {
+
+ 
+
+
+        //初始化返回值
+        DataSet dsreturn = initReturnDataSet().Clone();
+        dsreturn.Tables["返回值单条"].Rows.Add(new string[] { "err", "初始化" });
+
+        //参数合法性各种验证，这里省略
+
+        //开始真正的处理，这里只是演示，所以直接在这里写业务逻辑代码了
+
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+
+        Hashtable param = new Hashtable();
+        param.Add("@UAid", uaid);
+
+
+
+        Hashtable return_ht = new Hashtable();
+        return_ht = I_DBL.RunParam_SQL("select 'chengzuzige'=(select count(*) from View_yj_chengzuzige where yuefenchazhi=2),'cheweifei'=(select count(*) from View_yj_cheweifei where yuefenchazhi=1),'fangzufukuan'=(select count(*) from View_yj_fangzufukuan where yuefenchazhi=1),'hetongdaoqi'=(select count(*) from View_yj_hetongdaoqi where yuefenchazhi=1)", "数据记录", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["数据记录"].Copy();
+
+            if (redb.Rows.Count < 1)
+            {
+                dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
+                dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "";
+                return dsreturn;
+            }
+
+            dsreturn.Tables.Add(redb);
+
+
+            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "";
+        }
+        else
+        {
+            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "意外错误，获取失败：" + return_ht["return_errmsg"].ToString();
+        }
+
+
+
+
+
+        return dsreturn;
+    }
+
+
 }
