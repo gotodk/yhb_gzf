@@ -126,14 +126,14 @@ public class NoReSetDEL_160623000087
             if ((bool)(return_ht["return_float"]))
             {
 
-                return "批量生效完成！";
+                return "生效完成！";
             }
 
         }
 
 
 
-        return "批量生效失败，发生错误";
+        return "生效失败，发生错误";
     }
 
 

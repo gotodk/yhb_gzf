@@ -20,7 +20,7 @@ public partial class MasterPageMain : System.Web.UI.MasterPage
     {
 
 
-        object[] re_dsi = IPC.Call("获取站内信右上角提醒", new object[] { "system" });
+        object[] re_dsi = IPC.Call("获取站内信右上角提醒", new object[] { UserSession.唯一键 });
         if (re_dsi[0].ToString() == "ok")
         {
             //这个就是得到远程方法真正的返回值，不同类型的，自行进行强制转换即可。
@@ -36,11 +36,23 @@ public partial class MasterPageMain : System.Web.UI.MasterPage
 
 
         masterpageleftmenu1.OnNeedLoadData += new masterpageleftmenu.OnNeedDataHandler(MyWebControl_OnNeedLoadData);
-        this.Page.Title = ConfigurationManager.AppSettings["SYSname"] + " --- 系统管理";
-        titleshowname.InnerHtml = ConfigurationManager.AppSettings["SYSname"] + " --- 系统管理";
+        this.Page.Title = ConfigurationManager.AppSettings["SYSname"] + "";
+        titleshowname.InnerHtml = ConfigurationManager.AppSettings["SYSname"] + "";
         mysmlogo.Src = ConfigurationManager.AppSettings["mylogo_s"];
         showusername.InnerHtml = UserSession.登录名;
 
+        //重新显示右上角为员工姓名
+        
+        object[] re_dsi_uinf = IPC.Call("获取用户基础资料", new object[] { UserSession.唯一键 });
+        if (re_dsi_uinf[0].ToString() == "ok")
+        {
+            //这个就是得到远程方法真正的返回值，不同类型的，自行进行强制转换即可。
+            DataTable dt = (DataTable)re_dsi_uinf[1];
+            if (dt != null && dt.Columns.Contains("xingming"))
+            {
+                showusername.InnerHtml = dt.Rows[0]["xingming"].ToString() + '[' + showusername.InnerHtml + ']';
+            }
+        }
 
         //获取用户头像
         if (System.IO.File.Exists(Server.MapPath("/uploadfiles/faceup/" + UserSession.唯一键 + ".jpg")))
@@ -48,12 +60,7 @@ public partial class MasterPageMain : System.Web.UI.MasterPage
             mytouiang = "/uploadfiles/faceup/" + UserSession.唯一键 + ".jpg";
         }
         
-        //object[] re_dsi = IPC.Call("获取用户头像", new object[] { UserSession.唯一键 });
-        //if (re_dsi[0].ToString() == "ok")
-        //{
-        //    //这个就是得到远程方法真正的返回值，不同类型的，自行进行强制转换即可。
-        //    mytouiang = re_dsi[1].ToString();
-        //}
+   
 
         DataSet ds_znx = GetInfo_znxtop();
         if (ds_znx != null)

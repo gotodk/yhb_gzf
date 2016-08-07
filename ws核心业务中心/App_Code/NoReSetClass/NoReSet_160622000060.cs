@@ -58,7 +58,7 @@ public class NoReSet_160622000060
         Hashtable param = new Hashtable();
         //以可排序guid方式生成
         //HID, Hzhuangtai, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hyjrq, Hqiandingriqi, Hbeizhu, Hchuangjianren
-        string guid = CombGuid.GetMewIdFormSequence("ZZZ_RZHT");
+        //string guid = CombGuid.GetMewIdFormSequence("ZZZ_RZHT");
         param.Add("@HID", ht_forUI["HID"].ToString());
         param.Add("@Hzhuangtai", "草稿");
         param.Add("@H_CID", ht_forUI["H_CID"].ToString());
@@ -82,7 +82,7 @@ public class NoReSet_160622000060
         if ((bool)(return_ht["return_float"]))
         {
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "新增成功！";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "新增成功！{" + ht_forUI["HID"].ToString() + "}";
         }
         else
         {
@@ -147,7 +147,7 @@ public class NoReSet_160622000060
         {
 
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！{" + ht_forUI["idforedit"].ToString() + "}";
         }
         else
         {

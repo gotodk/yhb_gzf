@@ -125,14 +125,14 @@ public class NoReSetDEL_160706000091
             if ((bool)(return_ht["return_float"]))
             {
 
-                return "批量使合同生效完成，相关状态已经变更！";
+                return "使合同生效完成，相关状态已经变更！";
             }
 
         }
 
 
 
-        return "批量生效失败，发生错误";
+        return "生效失败，发生错误";
     }
 
 

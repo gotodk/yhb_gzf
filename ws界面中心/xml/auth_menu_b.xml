@@ -324,7 +324,12 @@
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
     <SortOrder>18</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_money_tj_zhylb.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├租户一览表</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-5</SortMoveDown>
@@ -336,7 +341,12 @@
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
     <SortOrder>19</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_money_tj_fwylb.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├房屋一览表</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-4</SortMoveDown>
@@ -348,7 +358,12 @@
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
     <SortOrder>20</SortOrder>
+    <m_url>/adminht/corepage/yewu/list_money_tj_skylb.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├收款一览表</SortNameTree>
     <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>-3</SortMoveDown>
@@ -360,7 +375,12 @@
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
     <SortOrder>21</SortOrder>
+    <m_url>/adminht/corepage/yewu/xxx.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├租金汇总统计表</SortNameTree>
     <SortMoveUp>3</SortMoveUp>
     <SortMoveDown>-2</SortMoveDown>
@@ -372,7 +392,12 @@
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
     <SortOrder>22</SortOrder>
+    <m_url>/adminht/corepage/yewu/xxx.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├押金汇总统计表</SortNameTree>
     <SortMoveUp>4</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -384,7 +409,12 @@
     <SortParentID>34</SortParentID>
     <SortParentPath>,34,</SortParentPath>
     <SortOrder>23</SortOrder>
+    <m_url>/adminht/corepage/yewu/xxx.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│└物业费汇总统计表</SortNameTree>
     <SortMoveUp>5</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>

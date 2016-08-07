@@ -23,7 +23,7 @@
                     sort: 'R_OrderBy',
                     order: 'R_Sort'
                 },
-                height: 400,
+                height: ($(window).width() > 700 ? 400 : 260),
 
                 autowidth: false,
                 shrinkToFit: [*[FS_D_shrinkToFit]*], //是否自动缩放列宽
@@ -34,7 +34,7 @@
                     [*[SubDialog]*]
                 ],
 
-                gridview: true, //这个选项必须开
+                gridview: gridview_cs_for_ie, //这个选项必须开,如果是false，支持ie8，但大量数据时会很慢
                 viewrecords: true,
                 rowNum: [*[Default_FD_D_pagesize]*],
                 rowList: [[*[FD_D_pagesize]*]],
@@ -96,7 +96,7 @@
                     refresh: true,
                     refreshicon: 'ace-icon fa fa-refresh green',
                     view: true,
-                    viewicon: 'ace-icon fa fa-search-plus grey',
+                    viewicon: 'ace-icon fa fa-eye grey',
                 },
                 {
                     recreateForm: true,
@@ -123,6 +123,7 @@
                 {
                     //search form
                     recreateForm: true,
+					width: ($(window).width()*0.9 > 450 ? 450 : $(window).width()*0.9),
                     afterShowSearch: function (e) {
                         var form = $(e[0]);
                         form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
@@ -135,14 +136,15 @@
                     ,
                     multipleSearch: true,
                     multipleGroup: true,
-                    showQuery: true,
-                    jqModal: false
+                    showQuery: false,
+                    jqModal: false,
+					closeAfterSearch:true
 
                 },
                 {
                     //view record form
                     recreateForm: true,
-                    width: 600,
+                    width: ($(window).width()*0.9 > 700 ? 700 : $(window).width()*0.9),
                     beforeShowForm: function (e) {
                         var form = $(e[0]);
                         form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')

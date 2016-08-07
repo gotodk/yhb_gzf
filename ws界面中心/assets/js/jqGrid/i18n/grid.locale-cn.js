@@ -21,7 +21,7 @@ $.extend($.jgrid,{
         Find: "查找",
         Reset: "重置",
         odata: [{ oper:'eq', text:'等于\u3000\u3000'},{ oper:'ne', text:'不等\u3000\u3000'},{ oper:'lt', text:'小于\u3000\u3000'},{ oper:'le', text:'小于等于'},{ oper:'gt', text:'大于\u3000\u3000'},{ oper:'ge', text:'大于等于'},{ oper:'bw', text:'开始于'},{ oper:'bn', text:'不开始于'},{ oper:'in', text:'属于\u3000\u3000'},{ oper:'ni', text:'不属于'},{ oper:'ew', text:'结束于'},{ oper:'en', text:'不结束于'},{ oper:'cn', text:'包含\u3000\u3000'},{ oper:'nc', text:'不包含'},{ oper:'nu', text:'不存在'},{ oper:'nn', text:'存在'}],
-        groupOps: [ { op: "AND", text: "所有" },    { op: "OR",  text: "任一" } ],
+        groupOps: [ { op: "AND", text: "并且" },    { op: "OR",  text: "或者" } ],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
     },
@@ -66,15 +66,15 @@ $.extend($.jgrid,{
         addtext:"",
         addtitle: "添加新记录",
         deltext: "",
-        deltitle: "删除所选记录",
+        deltitle: "批量删除",
         searchtext: "",
-        searchtitle: "查找",
+        searchtitle: "高级搜索",
         refreshtext: "",
-        refreshtitle: "刷新表格",
+        refreshtitle: "刷新",
         alertcap: "注意",
         alerttext: "请选择记录",
         viewtext: "",
-        viewtitle: "查看所选记录"
+        viewtitle: "竖向阅读"
     },
     col : {
         caption: "选择列",

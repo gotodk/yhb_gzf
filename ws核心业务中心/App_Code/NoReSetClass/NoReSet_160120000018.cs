@@ -93,7 +93,7 @@ public class NoReSet_160120000018
         {
 
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！" ;
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！";
         }
         else
         {

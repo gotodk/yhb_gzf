@@ -59,7 +59,20 @@ public class NoReSet_160114000014
         //以可排序guid方式生成
         //string guid = CombGuid.GetNewCombGuid("D"); 
         //以两位年+两位月+两位日+6位序列顺序号方式生成
-        string guid = CombGuid.GetNewCombGuid("U");
+
+
+        //用登录账号作为内码
+        string guid = ht_forUI["Uloginname"].ToString();
+        System.Text.RegularExpressions.Regex reg1 = new System.Text.RegularExpressions.Regex(@"^[0-9]\d*$");
+        bool regre = reg1.IsMatch(guid);
+        if (!regre)
+        {
+            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "错误：登录账号必须全是数字，以工号作为登录账号！";
+            return dsreturn;
+        }
+
+        //string guid = CombGuid.GetNewCombGuid("U");
         param.Add("@UAid", guid);
         param.Add("@Uloginname", ht_forUI["Uloginname"].ToString());
 
@@ -92,12 +105,19 @@ public class NoReSet_160114000014
 
         alsql.Add("INSERT INTO  ZZZ_userinfo(UAid ,xingming,zhuangtai,zhiwei,xingbie,beizhu,gongzuodi,suoshuquyu,shoujihao,gudingdianhua,youxiang,lingdao) VALUES(@UAid ,@xingming,@zhuangtai,@zhiwei,@xingbie,@beizhu,@gongzuodi,@suoshuquyu,@shoujihao,@gudingdianhua,@youxiang,@lingdao)");
 
+        //设置初始权限组
+        if (ht_forUI.Contains("morenqanxianshezhi") && ht_forUI["morenqanxianshezhi"].ToString() != "")
+        {
+            param.Add("@morenqanxianshezhi", ht_forUI["morenqanxianshezhi"].ToString());
+            alsql.Add("update auth_users_auths set Uingroups=@morenqanxianshezhi where UAid=@UAid");
+        }
+
         return_ht = I_DBL.RunParam_SQL(alsql, param);
 
         if ((bool)(return_ht["return_float"]))
         {
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "新增成功！";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "新增成功！{" + guid + "}";
         }
         else
         {
@@ -175,7 +195,7 @@ public class NoReSet_160114000014
         {
 
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！{" + ht_forUI["idforedit"].ToString() + "}";
         }
         else
         {

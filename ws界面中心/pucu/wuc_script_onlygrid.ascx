@@ -45,7 +45,7 @@
         function getUrlParam(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
             var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-            if (r != null) return unescape(r[2]); return null; //返回参数值
+            if (r != null) return r[2]; return null; //返回参数值
         }
         function GetPageName() {
             var url = window.location.href;//获取完整URL 
@@ -55,6 +55,38 @@
             tmp = pp.split("?");//把参数和文件名分割开 
             return tmp[0];
         }
+
+        var gridview_cs_for_ie = true;
+        function isIE() {
+            if (!!window.ActiveXObject || "ActiveXObject" in window) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function IEVersion() {
+            var rv = -1;
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                var ua = navigator.userAgent;
+                var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+                if (re.exec(ua) != null)
+                    rv = parseFloat(RegExp.$1);
+            } else if (navigator.appName == 'Netscape') {
+                var ua = navigator.userAgent;
+                var re = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+                if (re.exec(ua) != null)
+                    rv = parseFloat(RegExp.$1);
+            }
+            return rv;
+        }
+      
+        if (isIE()) {
+            if (IEVersion() < 10) {
+                gridview_cs_for_ie = false; //针对ie9，设置jqgrid的参数。使其兼容
+            };
+        };
+
     </script>
 
     <!-- **********输入过程控制处理******** -->
@@ -80,12 +112,72 @@
     <script type="text/javascript">
         var grid_selector = "#grid-table";
         var pager_selector = "#grid-pager";
+        
 
 
+        function clon_click(cb) {
+            var ckid = $(cb).attr("id").replace("clon_", "");
+            $(cb).blur();
+            $("#" + ckid).click();
+        }
         jQuery(function ($) {
+
+
+
+
+
+
 
  
             initjqgrid();
+
+            //生成一个便捷操作的按钮区域
+            var timer_clone_pgbutton = window.setInterval(function () {
+                if ($("#kuaijiedaanniuquyu").attr("cloneover")=="0" && typeof ($(".ui-pg-button.ui-corner-all").eq(0).attr("data-original-title")) != "undefined") {
+                 
+                    var ii = 0;
+                    $("#kuaijiedaanniuquyu").empty();
+                    $(".ui-pg-button.ui-corner-all").each(function () {
+                       
+                        var newid = "pgbutton_pubcmm_" + ii;
+                        var thisid = $(this).attr("id");
+                        if (typeof ($(this).attr("id")) != "undefined") {
+                            newid = $(this).attr("id");
+                        }
+                        else {
+                            $(this).attr("id", newid);
+                        }
+                        
+                        var newclass = $(this).find("span").attr("class").replace("ui-icon", "").replace("bigger-140", "");
+                        var newstyle = $(this).find("span").attr("style");
+                        var titlestr = $(this).attr("data-original-title");
+                        if (titlestr == null)
+                        {
+                            titlestr = "";
+                        }
+                   
+                        var button_new = $("<button onclick='clon_click(this)' type='button' class='btn btn-white btn-sm bj-dtscan' id='clon_" + newid + "' style='" + newstyle + "'  ><i class='" + newclass + "  bigger-110'></i>" + titlestr + "</button>");
+ 
+                            $("#kuaijiedaanniuquyu").append(button_new);
+                     
+                        
+                     
+
+                        ii = ii+1;
+                    });
+                    $("#kuaijiedaanniuquyu").attr("cloneover","1");
+                    clearInterval(timer_clone_pgbutton);
+                     
+                }
+                else {
+                   
+                }
+           
+
+                   
+            }, 100);
+          
+            
 
             //快速回车搜索
             $("#mysearchtop").submit(function () {
@@ -165,8 +257,12 @@
                 $(grid_selector).setGridWidth($("#zheshiliebiaoquyu").width() );
 
                 var ss = getPageSize();
- 
-                $(grid_selector).setGridHeight(ss.WinH - $("#zheshiliebiaoquyu").offset().top - 150);
+                var new_height = ss.WinH - $("#zheshiliebiaoquyu").offset().top - 150;
+                if (new_height < 300)
+                {
+                    new_height = 410;
+                }
+                $(grid_selector).setGridHeight(new_height);
             });
 
 
@@ -507,12 +603,20 @@
 		        }
 
 		        //收缩时重新定义列表高度
-		        $(grid_selector).setGridHeight(getPageSize().WinH - $("#zheshiliebiaoquyu").offset().top - 150);
+		        var new_height = ss.WinH - $("#zheshiliebiaoquyu").offset().top - 150;
+		        if (new_height < 300) {
+		            new_height = 410;
+		        }
+		        $(grid_selector).setGridHeight(new_height);
 		        $("#zhedie_bbt").click(function () {
 
 		            setTimeout(function () {
 		                var ss = getPageSize();
-		                $(grid_selector).setGridHeight(ss.WinH - $("#zheshiliebiaoquyu").offset().top - 150);
+		                var new_height = ss.WinH - $("#zheshiliebiaoquyu").offset().top - 150;
+		                if (new_height < 300) {
+		                    new_height = 410;
+		                }
+		                $(grid_selector).setGridHeight(new_height);
 		            }, 500);
 		        });
  
