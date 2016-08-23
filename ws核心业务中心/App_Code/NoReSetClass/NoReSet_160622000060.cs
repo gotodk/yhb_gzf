@@ -33,6 +33,56 @@ public class NoReSet_160622000060
         return ds;
     }
 
+
+
+    /// <summary>
+    /// 检查合同期限，不能超过资格期限
+    /// </summary>
+    /// <param name="parameter_forUI">前台表单传来的参数</param>
+    /// <returns></returns>
+    private string check_htqx(string Hdaoqiriqi,string H_CID)
+    {
+
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        Hashtable param = new Hashtable();
+        param.Add("@CID", H_CID);
+        param.Add("@Hdaoqiriqi", Hdaoqiriqi);
+
+        return_ht = I_DBL.RunParam_SQL(" select  Datediff(day,cast((select  top 1 Cczqx from ZZZ_chengzuren where CID=@CID) as datetime),cast(@Hdaoqiriqi as datetime))  as chazhi", "数据记录", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["数据记录"].Copy();
+
+            if (redb.Rows.Count > 0)
+            {
+                if (Convert.ToInt32(redb.Rows[0]["chazhi"]) > 0)
+                {
+                    return "提交失败，合同期限不能超过资格期限！已超"+ redb.Rows[0]["chazhi"].ToString() + "天。";
+                }
+                else
+                {
+                    return "ok";
+                }
+                
+            }
+            else
+            {
+                return "检查合同期限出错";
+            }
+
+        }
+        else
+        {
+            return "检查合同期限出错";
+        }
+
+
+
+    }
+
+
     /// <summary>
     /// 增加数据
     /// </summary>
@@ -50,6 +100,13 @@ public class NoReSet_160622000060
         DataSet dsreturn = initReturnDataSet().Clone();
         dsreturn.Tables["返回值单条"].Rows.Add(new string[] { "err", "初始化" });
         //参数合法性各种验证，这里要根据具体业务逻辑处理
+        string ck_qx = check_htqx(ht_forUI["Hdaoqiriqi"].ToString(), ht_forUI["H_CID"].ToString());
+        if (ck_qx != "ok")
+        {
+            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = ck_qx;
+            return dsreturn;
+        }
 
         //开始真正的处理，根据业务逻辑操作数据库
         I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
@@ -116,6 +173,15 @@ public class NoReSet_160622000060
         {
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
             dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "没有明确的修改目标！";
+            return dsreturn;
+        }
+
+
+        string ck_qx = check_htqx(ht_forUI["Hdaoqiriqi"].ToString(), ht_forUI["H_CID"].ToString());
+        if (ck_qx != "ok")
+        {
+            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = ck_qx;
             return dsreturn;
         }
         //开始真正的处理，这里只是演示，所以直接在这里写业务逻辑代码了
