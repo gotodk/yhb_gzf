@@ -314,13 +314,23 @@ public partial class masterpageleftmenu : System.Web.UI.UserControl
                 css_tubiao = DRarr[t]["m_ico"].ToString();
             }
 
-        
+
             //判定当前是否最后一层并且是否应该激活
 
             //开始拼接html代码
             menuallhtml = menuallhtml + "<li class='" + css_active + css_open + "'>";
-            menuallhtml = menuallhtml + "<a href='" + DRarr[t]["m_url"].ToString() + "' " + css_havesub_toggle + ">";
-            menuallhtml = menuallhtml + "<i class='menu-icon fa " + css_tubiao + "'></i>";
+            if (!onelevel)
+            {
+                menuallhtml = menuallhtml + "<a href='" + DRarr[t]["m_url"].ToString() + "' " + css_havesub_toggle + ">";
+            }
+            else
+            {
+                menuallhtml = menuallhtml + "<a href='" + DRarr[t]["m_url"].ToString() + "' " + css_havesub_toggle + " style='color:#000000; font-size:14px;'>";
+             
+            }
+
+           
+            menuallhtml = menuallhtml + "<i class='menu-icon fa " + css_tubiao + " blue'></i>";
             menuallhtml = menuallhtml + "<span class='menu-text'> " + DRarr[t]["SortName"].ToString() + " </span>";
             menuallhtml = menuallhtml + css_havesub_arrow;
             menuallhtml = menuallhtml + "</a>";

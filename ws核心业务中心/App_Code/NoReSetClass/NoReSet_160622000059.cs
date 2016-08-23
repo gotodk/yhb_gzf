@@ -66,12 +66,12 @@ public class NoReSet_160622000059
         param.Add("@Cshenfenzheng", ht_forUI["Cshenfenzheng"].ToString());
         param.Add("@Clianxifangshi", ht_forUI["Clianxifangshi"].ToString());
         param.Add("@Cgongzuodanwei", ht_forUI["Cgongzuodanwei"].ToString());
-        param.Add("@Cczqx", ht_forUI["Cczqx"].ToString());
+        param.Add("@Cleixing", ht_forUI["Cleixing"].ToString());
         param.Add("@Cchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
 
 
 
-        alsql.Add("INSERT INTO ZZZ_chengzuren(CID, Czhuangtai, Cxingming,Csqbbh, Cshenfenzheng, Clianxifangshi, Cgongzuodanwei, Cczqx, Cchuangjianren) VALUES(@CID, @Czhuangtai, @Cxingming,@Csqbbh, @Cshenfenzheng, @Clianxifangshi, @Cgongzuodanwei, @Cczqx, @Cchuangjianren)");
+        alsql.Add("INSERT INTO ZZZ_chengzuren(CID, Czhuangtai, Cxingming,Csqbbh, Cshenfenzheng, Clianxifangshi, Cgongzuodanwei, Cleixing, Cchuangjianren) VALUES(@CID, @Czhuangtai, @Cxingming,@Csqbbh, @Cshenfenzheng, @Clianxifangshi, @Cgongzuodanwei, @Cleixing, @Cchuangjianren)");
 
         //遍历子表， 插入 
         string zibiao_gts_id = "grid-table-subtable-160706001076";
@@ -154,9 +154,9 @@ public class NoReSet_160622000059
         param.Add("@Cshenfenzheng", ht_forUI["Cshenfenzheng"].ToString());
         param.Add("@Clianxifangshi", ht_forUI["Clianxifangshi"].ToString());
         param.Add("@Cgongzuodanwei", ht_forUI["Cgongzuodanwei"].ToString());
-        param.Add("@Cczqx", ht_forUI["Cczqx"].ToString());
+        param.Add("@Cleixing", ht_forUI["Cleixing"].ToString());
 
-        alsql.Add("UPDATE ZZZ_chengzuren SET  Cxingming=@Cxingming,Csqbbh=@Csqbbh, Cshenfenzheng=@Cshenfenzheng, Clianxifangshi=@Clianxifangshi, Cgongzuodanwei=@Cgongzuodanwei, Cczqx=@Cczqx where CID=@CID ");
+        alsql.Add("UPDATE ZZZ_chengzuren SET  Cxingming=@Cxingming,Csqbbh=@Csqbbh, Cshenfenzheng=@Cshenfenzheng, Clianxifangshi=@Clianxifangshi, Cgongzuodanwei=@Cgongzuodanwei, Cleixing=@Cleixing where CID=@CID ");
 
 
 

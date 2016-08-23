@@ -10,7 +10,7 @@
 
 <script src="/assets/js/jquery.PrintArea.js"></script>
 
-    		<!-- inline scripts related to this page -->
+<%--    		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			jQuery(function($) {
 				$('.easy-pie-chart.percentage').each(function(){
@@ -180,7 +180,7 @@
 		 
 			
 			})
-		</script>
+		</script>--%>
 
 
 
