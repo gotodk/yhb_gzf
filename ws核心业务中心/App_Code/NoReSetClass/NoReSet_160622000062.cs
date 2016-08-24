@@ -72,13 +72,41 @@ public class NoReSet_160622000062
         {
             param.Add("@Mxiaciriqi", ht_forUI["Mxiaciriqi"].ToString());
         }
-        
+        //
         param.Add("@Mbeizhu", ht_forUI["Mbeizhu"].ToString());
         param.Add("@Mchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
 
+        param.Add("@MHzlqx", ht_forUI["MHzlqx"].ToString());
+        param.Add("@MHjdzj", ht_forUI["MHjdzj"].ToString());
+        param.Add("@MHjdwyf", ht_forUI["MHjdwyf"].ToString());
+        param.Add("@MHjddtf", ht_forUI["MHjddtf"].ToString());
+        param.Add("@MHjdqtfy", ht_forUI["MHjdqtfy"].ToString());
+        param.Add("@MZ_zj_xmje", ht_forUI["MZ_zj_xmje"].ToString());
+        param.Add("@MZ_zj_yjn", ht_forUI["MZ_zj_yjn"].ToString());
+        param.Add("@MZ_zj_pzh", ht_forUI["MZ_zj_pzh"].ToString());
+        param.Add("@MZ_zj_bcsk", ht_forUI["MZ_zj_bcsk"].ToString());
+        param.Add("@MZ_zj_qiankuan", ht_forUI["MZ_zj_qiankuan"].ToString());
+        param.Add("@MZ_wy_xmje", ht_forUI["MZ_wy_xmje"].ToString());
+        param.Add("@MZ_wy_yjn", ht_forUI["MZ_wy_yjn"].ToString());
+        param.Add("@MZ_wy_pzh", ht_forUI["MZ_wy_pzh"].ToString());
+        param.Add("@MZ_wy_bcsk", ht_forUI["MZ_wy_bcsk"].ToString());
+        param.Add("@MZ_wy_qiankuan", ht_forUI["MZ_wy_qiankuan"].ToString());
+        param.Add("@MZ_dt_xmje", ht_forUI["MZ_dt_xmje"].ToString());
+        param.Add("@MZ_dt_yjn", ht_forUI["MZ_dt_yjn"].ToString());
+        param.Add("@MZ_dt_pzh", ht_forUI["MZ_dt_pzh"].ToString());
+        param.Add("@MZ_dt_bcsk", ht_forUI["MZ_dt_bcsk"].ToString());
+        param.Add("@MZ_dt_qiankuan", ht_forUI["MZ_dt_qiankuan"].ToString());
+        param.Add("@MZ_q_xmje", ht_forUI["MZ_q_xmje"].ToString());
+        param.Add("@MZ_q_yjn", ht_forUI["MZ_q_yjn"].ToString());
+        param.Add("@MZ_q_pzh", ht_forUI["MZ_q_pzh"].ToString());
+        param.Add("@MZ_q_bcsk", ht_forUI["MZ_q_bcsk"].ToString());
+        param.Add("@MZ_q_qiankuan", ht_forUI["MZ_q_qiankuan"].ToString());
+        param.Add("@MZ_all_xmje", ht_forUI["MZ_all_xmje"].ToString());
+        param.Add("@MZ_all_yjn", ht_forUI["MZ_all_yjn"].ToString());
+        param.Add("@MZ_all_qiankuan", ht_forUI["MZ_all_qiankuan"].ToString());
+        
 
-
-        alsql.Add("INSERT INTO ZZZ_moneyZJSKD(MID, M_HID, Mpz, Mje,Mxiaciriqi, Mbeizhu, Mzt, Mchuangjianren) VALUES(@MID, @M_HID, @Mpz, @Mje,@Mxiaciriqi, @Mbeizhu, @Mzt, @Mchuangjianren)");
+        alsql.Add("INSERT INTO ZZZ_moneyZJSKD(MID, M_HID, Mpz, Mje,Mxiaciriqi, Mbeizhu, Mzt, Mchuangjianren,MHzlqx, MHjdzj, MHjdwyf,   MHjddtf, MHjdqtfy, MZ_zj_xmje, MZ_zj_yjn, MZ_zj_pzh, MZ_zj_bcsk, MZ_zj_qiankuan, MZ_wy_xmje, MZ_wy_yjn,   MZ_wy_pzh, MZ_wy_bcsk, MZ_wy_qiankuan, MZ_dt_xmje, MZ_dt_yjn, MZ_dt_pzh, MZ_dt_bcsk, MZ_dt_qiankuan,   MZ_q_xmje, MZ_q_yjn, MZ_q_pzh, MZ_q_bcsk, MZ_q_qiankuan, MZ_all_xmje, MZ_all_yjn, MZ_all_qiankuan) VALUES(@MID, @M_HID, @Mpz, @Mje,@Mxiaciriqi, @Mbeizhu, @Mzt, @Mchuangjianren,@MHzlqx, @MHjdzj, @MHjdwyf,   @MHjddtf, @MHjdqtfy, @MZ_zj_xmje, @MZ_zj_yjn, @MZ_zj_pzh, @MZ_zj_bcsk, @MZ_zj_qiankuan, @MZ_wy_xmje, @MZ_wy_yjn,   @MZ_wy_pzh, @MZ_wy_bcsk, @MZ_wy_qiankuan, @MZ_dt_xmje, @MZ_dt_yjn, @MZ_dt_pzh, @MZ_dt_bcsk, @MZ_dt_qiankuan,   @MZ_q_xmje, @MZ_q_yjn, @MZ_q_pzh, @MZ_q_bcsk, @MZ_q_qiankuan, @MZ_all_xmje, @MZ_all_yjn, @MZ_all_qiankuan)");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -129,7 +157,7 @@ public class NoReSet_160622000062
         ArrayList alsql = new ArrayList();
         Hashtable param = new Hashtable();
         param.Add("@MID", ht_forUI["idforedit"].ToString());
-        param.Add("@M_HID", ht_forUI["M_HID"].ToString());
+        //param.Add("@M_HID", ht_forUI["M_HID"].ToString());
         param.Add("@Mpz", ht_forUI["Mpz"].ToString());
         param.Add("@Mje", ht_forUI["Mje"].ToString());
         if (ht_forUI["Mxiaciriqi"].ToString() == "")
@@ -142,7 +170,36 @@ public class NoReSet_160622000062
         }
         param.Add("@Mbeizhu", ht_forUI["Mbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_moneyZJSKD SET M_HID=@M_HID,Mpz=@Mpz,Mje=@Mje,Mxiaciriqi=@Mxiaciriqi,Mbeizhu=@Mbeizhu where MID=@MID and Mzt='草稿' ");
+        param.Add("@MHzlqx", ht_forUI["MHzlqx"].ToString());
+        param.Add("@MHjdzj", ht_forUI["MHjdzj"].ToString());
+        param.Add("@MHjdwyf", ht_forUI["MHjdwyf"].ToString());
+        param.Add("@MHjddtf", ht_forUI["MHjddtf"].ToString());
+        param.Add("@MHjdqtfy", ht_forUI["MHjdqtfy"].ToString());
+        param.Add("@MZ_zj_xmje", ht_forUI["MZ_zj_xmje"].ToString());
+        param.Add("@MZ_zj_yjn", ht_forUI["MZ_zj_yjn"].ToString());
+        param.Add("@MZ_zj_pzh", ht_forUI["MZ_zj_pzh"].ToString());
+        param.Add("@MZ_zj_bcsk", ht_forUI["MZ_zj_bcsk"].ToString());
+        param.Add("@MZ_zj_qiankuan", ht_forUI["MZ_zj_qiankuan"].ToString());
+        param.Add("@MZ_wy_xmje", ht_forUI["MZ_wy_xmje"].ToString());
+        param.Add("@MZ_wy_yjn", ht_forUI["MZ_wy_yjn"].ToString());
+        param.Add("@MZ_wy_pzh", ht_forUI["MZ_wy_pzh"].ToString());
+        param.Add("@MZ_wy_bcsk", ht_forUI["MZ_wy_bcsk"].ToString());
+        param.Add("@MZ_wy_qiankuan", ht_forUI["MZ_wy_qiankuan"].ToString());
+        param.Add("@MZ_dt_xmje", ht_forUI["MZ_dt_xmje"].ToString());
+        param.Add("@MZ_dt_yjn", ht_forUI["MZ_dt_yjn"].ToString());
+        param.Add("@MZ_dt_pzh", ht_forUI["MZ_dt_pzh"].ToString());
+        param.Add("@MZ_dt_bcsk", ht_forUI["MZ_dt_bcsk"].ToString());
+        param.Add("@MZ_dt_qiankuan", ht_forUI["MZ_dt_qiankuan"].ToString());
+        param.Add("@MZ_q_xmje", ht_forUI["MZ_q_xmje"].ToString());
+        param.Add("@MZ_q_yjn", ht_forUI["MZ_q_yjn"].ToString());
+        param.Add("@MZ_q_pzh", ht_forUI["MZ_q_pzh"].ToString());
+        param.Add("@MZ_q_bcsk", ht_forUI["MZ_q_bcsk"].ToString());
+        param.Add("@MZ_q_qiankuan", ht_forUI["MZ_q_qiankuan"].ToString());
+        param.Add("@MZ_all_xmje", ht_forUI["MZ_all_xmje"].ToString());
+        param.Add("@MZ_all_yjn", ht_forUI["MZ_all_yjn"].ToString());
+        param.Add("@MZ_all_qiankuan", ht_forUI["MZ_all_qiankuan"].ToString());
+
+        alsql.Add("UPDATE ZZZ_moneyZJSKD SET  Mpz=@Mpz,Mje=@Mje,Mxiaciriqi=@Mxiaciriqi,Mbeizhu=@Mbeizhu, MHzlqx=@MHzlqx, MHjdzj=@MHjdzj, MHjdwyf=@MHjdwyf,   MHjddtf=@MHjddtf, MHjdqtfy=@MHjdqtfy, MZ_zj_xmje=@MZ_zj_xmje, MZ_zj_yjn=@MZ_zj_yjn, MZ_zj_pzh=@MZ_zj_pzh, MZ_zj_bcsk=@MZ_zj_bcsk, MZ_zj_qiankuan=@MZ_zj_qiankuan, MZ_wy_xmje=@MZ_wy_xmje, MZ_wy_yjn=@MZ_wy_yjn,   MZ_wy_pzh=@MZ_wy_pzh, MZ_wy_bcsk=@MZ_wy_bcsk, MZ_wy_qiankuan=@MZ_wy_qiankuan, MZ_dt_xmje=@MZ_dt_xmje, MZ_dt_yjn=@MZ_dt_yjn, MZ_dt_pzh=@MZ_dt_pzh, MZ_dt_bcsk=@MZ_dt_bcsk, MZ_dt_qiankuan=@MZ_dt_qiankuan,   MZ_q_xmje=@MZ_q_xmje, MZ_q_yjn=@MZ_q_yjn, MZ_q_pzh=@MZ_q_pzh, MZ_q_bcsk=@MZ_q_bcsk, MZ_q_qiankuan=@MZ_q_qiankuan, MZ_all_xmje=@MZ_all_xmje, MZ_all_yjn=@MZ_all_yjn, MZ_all_qiankuan=@MZ_all_qiankuan where MID=@MID and Mzt='草稿' ");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);

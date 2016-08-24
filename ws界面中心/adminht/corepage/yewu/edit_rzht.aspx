@@ -32,8 +32,31 @@
 
                       
                  }
-                  
+                 
+                 window.setInterval(function () {
+                     if (getUrlParam("showinfo") == "1" || getUrlParam("showinfo") == "2")
+                     {
+                         var fifsssss_Hzlqx = $("#fifsssss_Hzlqx").text();
+                         var fifsssss_Hjdzj = $("#fifsssss_Hjdzj").text() * fifsssss_Hzlqx;
+                         var fifsssss_Hjdwyf = $("#fifsssss_Hjdwyf").text() * fifsssss_Hzlqx;
+                         var fifsssss_Hjddtf = $("#fifsssss_Hjddtf").text() * fifsssss_Hzlqx;
+                         var fifsssss_Hjdqtfy = $("#fifsssss_Hjdqtfy").text() * fifsssss_Hzlqx;
+                         $("#fifsssss_fenxiangxiaoji").text("租:" + fifsssss_Hjdzj + "，物:" + fifsssss_Hjdwyf + "，电:" + fifsssss_Hjddtf + "，其:" + fifsssss_Hjdqtfy + "");
+                     }
+                     else
+                     {
+                         var Hzlqx = $("#Hzlqx").val();
+                         var Hjdzj = $("#Hjdzj").val() * Hzlqx;
+                         var Hjdwyf = $("#Hjdwyf").val() * Hzlqx;
+                         var Hjddtf = $("#Hjddtf").val() * Hzlqx;
+                         var Hjdqtfy = $("#Hjdqtfy").val() * Hzlqx;
+                         $("#fenxiangxiaoji").val("租:" + Hjdzj + "，物:" + Hjdwyf + "，电:" + Hjddtf + "，其:" + Hjdqtfy + "");
 
+                         var Hje = (Hjdzj * 1 + Hjdwyf * 1 + Hjddtf * 1 + Hjdqtfy * 1).toFixed(2);
+                         $("#Hje").val(Hje);
+                     }
+                    
+                 }, 800);
 
                  var dfx_str_czrbh = "#show_searchopenyhbspgogo_H_CID";
                  var oldzhi_czrbh = $(dfx_str_czrbh).text();
@@ -73,6 +96,14 @@
                                  { $("#Fdiqu").val($.trim(arr_z[1]).replace("]", "")); }
                                  if (arr_z[0] == "[坐落")
                                  { $("#Fzuoluo").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度租金")
+                                 { $("#Hjdzj").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度物业费")
+                                 { $("#Hjdwyf").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度电梯费")
+                                 { $("#Hjddtf").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度其他费")
+                                 { $("#Hjdqtfy").val($.trim(arr_z[1]).replace("]", "")); }
                              }
                          }
 

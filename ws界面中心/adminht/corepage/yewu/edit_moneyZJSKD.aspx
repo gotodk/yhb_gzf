@@ -29,12 +29,46 @@
     <script type="text/javascript">
              jQuery(function ($) {
                  if (getUrlParam("fff") == "1") {
-
+                     $("#searchopenyhbspgogo_M_HID").hide();
                       
                  }
                   
+                 window.setInterval(function () {
+                     //计算合计值中的数据
+
+                     //合计凭证
+                     $("#Mpz").val("租:" + $("#MZ_zj_pzh").val() + "，物:" + $("#MZ_wy_pzh").val() + "，电:" + $("#MZ_dt_pzh").val() + "，其:" + $("#MZ_q_pzh").val() + "");
+
+                     //合计本次收款
+                     var MZ_zj_bcsk = $("#MZ_zj_bcsk").val() * 1;
+                     var MZ_wy_bcsk = $("#MZ_wy_bcsk").val() * 1;
+                     var MZ_dt_bcsk = $("#MZ_dt_bcsk").val() * 1;
+                     var MZ_q_bcsk = $("#MZ_q_bcsk").val() * 1;
+                     var hjsk = (MZ_zj_bcsk * 1 + MZ_wy_bcsk * 1 + MZ_dt_bcsk * 1 + MZ_q_bcsk * 1).toFixed(2);
+                     $("#Mje").val(hjsk);
+
+                     //计算子项欠款
+                     var qk_zj = ($("#MZ_zj_xmje").val() * 1 - $("#MZ_zj_yjn").val() * 1 - $("#MZ_zj_bcsk").val() * 1).toFixed(2);
+                     $("#MZ_zj_qiankuan").val(qk_zj);
+                     var qk_wy = ($("#MZ_wy_xmje").val() * 1 - $("#MZ_wy_yjn").val() * 1 - $("#MZ_wy_bcsk").val() * 1).toFixed(2);
+                     $("#MZ_wy_qiankuan").val(qk_wy);
+                     var qk_dt = ($("#MZ_dt_xmje").val() * 1 - $("#MZ_dt_yjn").val() * 1 - $("#MZ_dt_bcsk").val() * 1).toFixed(2);
+                     $("#MZ_dt_qiankuan").val(qk_dt);
+                     var qk_q = ($("#MZ_q_xmje").val() * 1 - $("#MZ_q_yjn").val() * 1 - $("#MZ_q_bcsk").val() * 1).toFixed(2);
+                     $("#MZ_q_qiankuan").val(qk_q);
+
+                     //计算合计欠款
+                     var MZ_zj_qiankuan = $("#MZ_zj_qiankuan").val() * 1;
+                     var MZ_wy_qiankuan = $("#MZ_wy_qiankuan").val() * 1;
+                     var MZ_dt_qiankuan = $("#MZ_dt_qiankuan").val() * 1;
+                     var MZ_q_qiankuan = $("#MZ_q_qiankuan").val() * 1;
+                     var hjqiankuan = (MZ_zj_qiankuan * 1 + MZ_wy_qiankuan * 1 + MZ_dt_qiankuan * 1 + MZ_q_qiankuan * 1).toFixed(2);
+                     $("#MZ_all_qiankuan").val(hjqiankuan);
+
+                 }, 800);
 
 
+                 //处理合同选择弹窗
                  var dfx_str_rzhtbh = "#show_searchopenyhbspgogo_M_HID";
                  var oldzhi_rzhtbh = $(dfx_str_rzhtbh).text();
                  var jiancha_rzhtbh = window.setInterval(function () {
@@ -54,7 +88,52 @@
                                  { $("#Cxingming").val($.trim(arr_z[1]).replace("]", "")); }
                                  if (arr_z[0] == "[身份信息")
                                  { $("#Cshenfenzheng").val($.trim(arr_z[1]).replace("]", "")); }
+
+                                 if (arr_z[0] == "[租赁期限")
+                                 { $("#MHzlqx").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度租金")
+                                 { $("#MHjdzj").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度物业费")
+                                 { $("#MHjdwyf").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度电梯费")
+                                 { $("#MHjddtf").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[季度其他费")
+                                 { $("#MHjdqtfy").val($.trim(arr_z[1]).replace("]", "")); }
+
+                                 if (arr_z[0] == "[已缴纳租金")
+                                 { $("#MZ_zj_yjn").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[已缴纳物业费")
+                                 { $("#MZ_wy_yjn").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[已缴纳电梯费")
+                                 { $("#MZ_dt_yjn").val($.trim(arr_z[1]).replace("]", "")); }
+                                 if (arr_z[0] == "[已缴纳其他费")
+                                 { $("#MZ_q_yjn").val($.trim(arr_z[1]).replace("]", "")); }
                              }
+
+                             //更换合同后，把其他相关字段计算出来并显示。
+
+                             //计算房租金额
+                             var Hzlqx = $("#MHzlqx").val();
+                             var Hjdzj = $("#MHjdzj").val() * Hzlqx;
+                             var Hjdwyf = $("#MHjdwyf").val() * Hzlqx;
+                             var Hjddtf = $("#MHjddtf").val() * Hzlqx;
+                             var Hjdqtfy = $("#MHjdqtfy").val() * Hzlqx;
+                             var Hje = (Hjdzj * 1 + Hjdwyf * 1 + Hjddtf * 1 + Hjdqtfy * 1).toFixed(2);
+                             $("#MZ_zj_xmje").val(Hjdzj);
+                             $("#MZ_wy_xmje").val(Hjdwyf);
+                             $("#MZ_dt_xmje").val(Hjddtf);
+                             $("#MZ_q_xmje").val(Hjdqtfy);
+                             $("#MZ_all_xmje").val(Hje);
+
+
+                             //计算已缴纳金额，包括合计已缴纳金额
+                             var MZ_zj_yjn = $("#MZ_zj_yjn").val() * 1;
+                             var MZ_wy_yjn = $("#MZ_wy_yjn").val() * 1;
+                             var MZ_dt_yjn = $("#MZ_dt_yjn").val() * 1;
+                             var MZ_q_yjn = $("#MZ_q_yjn").val() * 1;
+                             var hejijiaona = (MZ_zj_yjn * 1 + MZ_wy_yjn * 1 + MZ_dt_yjn * 1 + MZ_q_yjn * 1).toFixed(2);
+                             $("#MZ_all_yjn").val(hejijiaona);
+
                          }
 
                          oldzhi_rzhtbh = $(dfx_str_rzhtbh).text();

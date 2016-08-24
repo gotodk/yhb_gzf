@@ -124,14 +124,22 @@ public class NoReSet_160622000060
         param.Add("@Hdaoqiriqi", ht_forUI["Hdaoqiriqi"].ToString());
         param.Add("@Hfkfs", ht_forUI["Hfkfs"].ToString());
         param.Add("@Hje", ht_forUI["Hje"].ToString());
-        
+
+
+
+        param.Add("@Hzlqx", ht_forUI["Hzlqx"].ToString());
+        param.Add("@Hjdzj", ht_forUI["Hjdzj"].ToString());
+        param.Add("@Hjdwyf", ht_forUI["Hjdwyf"].ToString());
+        param.Add("@Hjddtf", ht_forUI["Hjddtf"].ToString());
+        param.Add("@Hjdqtfy", ht_forUI["Hjdqtfy"].ToString());
+       
         param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
         param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
         param.Add("@Hchuangjianren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
 
 
 
-        alsql.Add("INSERT INTO ZZZ_RZHT(HID, Hzhuangtai, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hshengxiaoriqi, Hqiandingriqi, Hbeizhu, Hchuangjianren) VALUES(@HID, @Hzhuangtai, @H_CID, @H_FID, @Hdaoqiriqi, @Hfkfs, @Hje, @Hshengxiaoriqi, @Hqiandingriqi, @Hbeizhu, @Hchuangjianren)");
+        alsql.Add("INSERT INTO ZZZ_RZHT(HID, Hzhuangtai, H_CID, H_FID, Hdaoqiriqi, Hfkfs, Hje, Hshengxiaoriqi, Hqiandingriqi, Hbeizhu, Hchuangjianren,  Hzlqx,Hjdzj,Hjdwyf,Hjddtf,Hjdqtfy ) VALUES(@HID, @Hzhuangtai, @H_CID, @H_FID, @Hdaoqiriqi, @Hfkfs, @Hje, @Hshengxiaoriqi, @Hqiandingriqi, @Hbeizhu, @Hchuangjianren,  @Hzlqx,@Hjdzj,@Hjdwyf,@Hjddtf,@Hjdqtfy)");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -197,11 +205,17 @@ public class NoReSet_160622000060
         param.Add("@Hdaoqiriqi", ht_forUI["Hdaoqiriqi"].ToString());
         param.Add("@Hfkfs", ht_forUI["Hfkfs"].ToString());
         param.Add("@Hje", ht_forUI["Hje"].ToString());
- 
+
+        param.Add("@Hzlqx", ht_forUI["Hzlqx"].ToString());
+        param.Add("@Hjdzj", ht_forUI["Hjdzj"].ToString());
+        param.Add("@Hjdwyf", ht_forUI["Hjdwyf"].ToString());
+        param.Add("@Hjddtf", ht_forUI["Hjddtf"].ToString());
+        param.Add("@Hjdqtfy", ht_forUI["Hjdqtfy"].ToString());
+
         param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
         param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_RZHT SET  H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu where HID=@HID and Hzhuangtai='草稿' ");
+        alsql.Add("UPDATE ZZZ_RZHT SET  H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu ,   Hzlqx=@Hzlqx,Hjdzj=@Hjdzj,Hjdwyf=@Hjdwyf,Hjddtf=@Hjddtf,Hjdqtfy=@Hjdqtfy where HID=@HID and Hzhuangtai='草稿' ");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
