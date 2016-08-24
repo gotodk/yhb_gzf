@@ -134,7 +134,7 @@
   <菜单表>
     <ID>1164</ID>
     <SortID>156</SortID>
-    <SortName>租金收款单</SortName>
+    <SortName>费用收款单</SortName>
     <SortParentID>146</SortParentID>
     <SortParentPath>,146,</SortParentPath>
     <SortOrder>7</SortOrder>
@@ -144,7 +144,7 @@
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/yewu/edit_moneyZJSKD.aspx</m_url_formenu_g>
-    <SortNameTree>│├租金收款单</SortNameTree>
+    <SortNameTree>│├费用收款单</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-4</SortMoveDown>
   </菜单表>
@@ -193,7 +193,7 @@
     <m_tip />
     <m_tag />
     <m_ico />
-    <m_show>不隐藏</m_show>
+    <m_show>隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/yewu/edit_moneyWYFSKD.aspx</m_url_formenu_g>
     <SortNameTree>│├物业费收款单</SortNameTree>
     <SortMoveUp>3</SortMoveUp>
@@ -244,7 +244,7 @@
     <m_tip />
     <m_tag />
     <m_ico />
-    <m_show>不隐藏</m_show>
+    <m_show>隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/yewu/edit_htwuye.aspx</m_url_formenu_g>
     <SortNameTree>│├物业合同管理</SortNameTree>
     <SortMoveUp>0</SortMoveUp>

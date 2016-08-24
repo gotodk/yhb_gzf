@@ -28,11 +28,22 @@
          <!-- 某些字段，在编辑时禁用，不想用新页面的情况使用 -->
     <script type="text/javascript">
              jQuery(function ($) {
-                 if (getUrlParam("fff") == "1") {
+                 if (getUrlParam("showinfo") != "1" && getUrlParam("showinfo") != "2") {
+                     window.setInterval(function () {
+                         //if
+                         var Jsffffy = $('input:radio[name="Jsffffy"]:checked').val();
+                         if (Jsffffy == "是") {
+                             $("#Jfyje").closest(".form-group").show();
+                         }
+                         else {
+                             $("#Jfyje").closest(".form-group").hide();
+                             $("#Jfyje").val('0');
+                         }
 
+                     }, 500);
                       
                  }
-                  
+               
  
 
 
