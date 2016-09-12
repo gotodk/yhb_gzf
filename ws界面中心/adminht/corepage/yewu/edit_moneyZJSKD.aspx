@@ -222,6 +222,73 @@
         </script>
 
 
+               <!-- 动态调整界面 -->
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $("#fzzixiangmu").after("<div class='row'><div class='col-sm-3' id='zzz_ys1'></div><div class='col-sm-3'  id='zzz_ys2'></div><div class='col-sm-3'  id='zzz_ys3'></div><div class='col-sm-3'  id='zzz_ys4'></div></div>");
+            var ys1_1 = $("#MZ_zj_xmje").closest(".form-group");
+            var ys1_2 = $("#MZ_zj_yjn").closest(".form-group");
+            var ys1_3 = $("#MZ_zj_pzh").closest(".form-group");
+            var ys1_4 = $("#MZ_zj_bcsk").closest(".form-group");
+            var ys1_5 = $("#MZ_zj_qiankuan").closest(".form-group");
+       
+ 
+            var ys2_1 = $("#MZ_wy_xmje").closest(".form-group");
+            var ys2_2 = $("#MZ_wy_yjn").closest(".form-group");
+            var ys2_3 = $("#MZ_wy_pzh").closest(".form-group");
+            var ys2_4 = $("#MZ_wy_bcsk").closest(".form-group");
+            var ys2_5 = $("#MZ_wy_qiankuan").closest(".form-group");
 
+ 
+            var ys3_1 = $("#MZ_dt_xmje").closest(".form-group");
+            var ys3_2 = $("#MZ_dt_yjn").closest(".form-group");
+            var ys3_3 = $("#MZ_dt_pzh").closest(".form-group");
+            var ys3_4 = $("#MZ_dt_bcsk").closest(".form-group");
+            var ys3_5 = $("#MZ_dt_qiankuan").closest(".form-group");
+
+            var ys4_1 = $("#MZ_q_xmje").closest(".form-group");
+            var ys4_2 = $("#MZ_q_yjn").closest(".form-group");
+            var ys4_3 = $("#MZ_q_pzh").closest(".form-group");
+            var ys4_4 = $("#MZ_q_bcsk").closest(".form-group");
+            var ys4_5 = $("#MZ_q_qiankuan").closest(".form-group");
+
+            $("#zzz_ys1").append(ys1_1);
+            $("#zzz_ys1").append(ys1_2);
+            $("#zzz_ys1").append(ys1_3);
+            $("#zzz_ys1").append(ys1_4);
+            $("#zzz_ys1").append(ys1_5);
+            $('label[for^="MZ_zj_"]').attr("class", "col-sm-8  no-padding-right text-left ");
+            $('input[id^="MZ_zj_"]').attr("class", "col-xs-12 col-sm-12 ");
+
+            $("#zzz_ys2").append(ys2_1);
+            $("#zzz_ys2").append(ys2_2);
+            $("#zzz_ys2").append(ys2_3);
+            $("#zzz_ys2").append(ys2_4);
+            $("#zzz_ys2").append(ys2_5);
+            $('label[for^="MZ_wy_"]').attr("class", "col-sm-8  no-padding-right text-left ");
+            $('input[id^="MZ_wy_"]').attr("class", "col-xs-12 col-sm-12 ");
+
+            $("#zzz_ys3").append(ys3_1);
+            $("#zzz_ys3").append(ys3_2);
+            $("#zzz_ys3").append(ys3_3);
+            $("#zzz_ys3").append(ys3_4);
+            $("#zzz_ys3").append(ys3_5);
+            $('label[for^="MZ_dt_"]').attr("class", "col-sm-8  no-padding-right text-left ");
+            $('input[id^="MZ_dt_"]').attr("class", "col-xs-12 col-sm-12 ");
+
+            $("#zzz_ys4").append(ys4_1);
+            $("#zzz_ys4").append(ys4_2);
+            $("#zzz_ys4").append(ys4_3);
+            $("#zzz_ys4").append(ys4_4);
+            $("#zzz_ys4").append(ys4_5);
+            $('label[for^="MZ_q_"]').attr("class", "col-sm-8  no-padding-right text-left ");
+            $('input[id^="MZ_q_"]').attr("class", "col-xs-12 col-sm-12 ");
+
+            $("#fzzixiangmu02").hide();
+            $("#fenzu003").hide();
+            $("#fenzu0003").hide();
+            
+        });
+            </script>
 </asp:Content>
 

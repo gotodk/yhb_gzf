@@ -2651,9 +2651,9 @@ public class bssystem : System.Web.Services.WebService
                 {
                     default_where = " and " + ds_DD.Tables["报表配置主表"].Rows[0]["FS_D_where"].ToString() + " ";
                 }
-           
+
             }
-            
+
 
 
             //处理发过来的表头搜索条件
@@ -2668,34 +2668,34 @@ public class bssystem : System.Web.Services.WebService
                 {
                     for (int i = 1; i <= 3; i++)
                     {
-                        if (ds_DD.Tables["报表配置主表"].Rows[0]["SRE_type_"+i].ToString() == "输入框")
+                        if (ds_DD.Tables["报表配置主表"].Rows[0]["SRE_type_" + i].ToString() == "输入框")
                         {
-                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()))
+                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()) && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
                             {
-                                extseearchstr = extseearchstr + " and "+ ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " like '%" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()] + "%'";
+                                extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " like '%" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()] + "%'";
                             }
                         }
                         if (ds_DD.Tables["报表配置主表"].Rows[0]["SRE_type_" + i].ToString() == "时间段")
                         {
-                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()+"1"))
+                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "1") && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
                             {
-                                extseearchstr = extseearchstr + " and "+ ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " >= '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()+"1"] + " 00:00:00.000'";
+                                extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " >= '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "1"] + " 00:00:00.000'";
                             }
-                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "2"))
+                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "2") && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
                             {
-                                extseearchstr = extseearchstr + " and "+ ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " <= '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()+"2"] + " 23:59:59.999'";
+                                extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " <= '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "2"] + " 23:59:59.999'";
                             }
                         }
                         if (ds_DD.Tables["报表配置主表"].Rows[0]["SRE_type_" + i].ToString() == "下拉框")
                         {
-                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() ))
+                            if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()) && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
                             {
                                 extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " = '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()] + "'";
                             }
-                             
+
                         }
                     }
-                
+
 
                 }
                 //生成条件
@@ -2763,13 +2763,24 @@ public class bssystem : System.Web.Services.WebService
             }
 
 
+            //开始调用对sql语句的配置的二次处理类库
+            Assembly serviceAsm_tsthcs = Assembly.GetExecutingAssembly();
+            Type typeName_tsthcs = serviceAsm_tsthcs.GetType("NoReSetAR_tsthcs_" + ht_forUI["this_extforinfoFSID"].ToString());
+            if (typeName_tsthcs != null)
+            {
+                object instance = serviceAsm_tsthcs.CreateInstance("NoReSetAR_tsthcs_" + ht_forUI["this_extforinfoFSID"].ToString());
+                object rtnObj = typeName_tsthcs.GetMethod("NRS_AR").Invoke(instance, new object[] { ds_page, dic_mysearchtop, parameter_forUI });
+                ds_page = ((DataSet)rtnObj).Copy();
+            }
+
 
 
             //调用执行方法获取数据
-            DataSet dsjg =  pd.GetPagerDB(ds_page);
+            DataSet dsjg = pd.GetPagerDB(ds_page);
 
             //开始调用二次处理
-            try {
+            try
+            {
                 Assembly serviceAsm = Assembly.GetExecutingAssembly();
                 Type typeName = serviceAsm.GetType("NoReSetAR_" + ht_forUI["this_extforinfoFSID"].ToString());
                 if (typeName != null)
@@ -2779,7 +2790,7 @@ public class bssystem : System.Web.Services.WebService
                     return (DataSet)rtnObj;
                 }
             }
-            catch  { return dsjg; }
+            catch { return dsjg; }
             return dsjg;
 
 
@@ -2833,8 +2844,12 @@ public class bssystem : System.Web.Services.WebService
 
         //参数合法性各种验证，这里省略
 
-        //开始真正的处理，这里只是演示，所以直接在这里写业务逻辑代码了
- 
+        //模拟分页，只处理需要的键值
+        DataSet ds_page;
+        pagerdemo pd = new pagerdemo();
+        ds_page = pd.SetPagerInit(new string[2] { "-1", "-1" });
+        ds_page.Tables[0].Rows[0]["search_tbname"] = " " + ds_DD.Tables["报表配置主表"].Rows[0]["FS_D_datatable"].ToString() + " ";
+
         //文件名
         string filename = ds_DD.Tables["报表配置主表"].Rows[0]["FS_name"].ToString();
 
@@ -2849,11 +2864,11 @@ public class bssystem : System.Web.Services.WebService
         for (int i = 0; i < ds_DD.Tables["字段配置子表"].Rows.Count; i++)
         {
             DataRow dr = ds_DD.Tables["字段配置子表"].Rows[i];
-            if(dr["DID_hide"].ToString() == "false" && dr["DID_formatter"].ToString() != "自定义")
+            if (dr["DID_hide"].ToString() == "false" && dr["DID_formatter"].ToString() != "自定义" && !dr["DID_showname"].ToString().EndsWith("."))
             {
                 field_str = field_str + " " + dr["DID_name"].ToString() + " as " + dr["DID_showname"].ToString() + ",";
             }
-   
+
         }
         field_str = field_str.TrimEnd(',');
 
@@ -2883,27 +2898,35 @@ public class bssystem : System.Web.Services.WebService
                 {
                     if (ds_DD.Tables["报表配置主表"].Rows[0]["SRE_type_" + i].ToString() == "输入框")
                     {
-                        if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()))
+                        if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()) && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
                         {
                             extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " like '%" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()] + "%'";
                         }
                     }
                     if (ds_DD.Tables["报表配置主表"].Rows[0]["SRE_type_" + i].ToString() == "时间段")
                     {
-                        if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "1"))
+                        if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "1") && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
                         {
                             extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " >= '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "1"] + " 00:00:00.000'";
                         }
-                        if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "2"))
+                        if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "2") && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
                         {
                             extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " <= '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + "2"] + " 23:59:59.999'";
                         }
+                    }
+                    if (ds_DD.Tables["报表配置主表"].Rows[0]["SRE_type_" + i].ToString() == "下拉框")
+                    {
+                        if (dic_mysearchtop.ContainsKey(ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()) && ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString().IndexOf("tsthcs_") < 0)
+                        {
+                            extseearchstr = extseearchstr + " and " + ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString() + " = '" + dic_mysearchtop[ds_DD.Tables["报表配置主表"].Rows[0]["SRE_idname_" + i].ToString()] + "'";
+                        }
+
                     }
                 }
 
 
             }
- 
+
         }
 
         if (ht_forUI.Contains("filters"))
@@ -2935,7 +2958,7 @@ public class bssystem : System.Web.Services.WebService
 
 
         string where_str = default_where + extseearchstr + teshuwhere;
-
+        ds_page.Tables[0].Rows[0]["search_str_where"] = where_str;
 
         //生成语句中的排序
         string order_str = "";
@@ -2947,10 +2970,23 @@ public class bssystem : System.Web.Services.WebService
         {
             order_str = ds_DD.Tables["报表配置主表"].Rows[0]["FS_D_order"].ToString();
         }
+        string tbname = " " + ds_DD.Tables["报表配置主表"].Rows[0]["FS_D_datatable"].ToString() + " ";
+        ds_page.Tables[0].Rows[0]["search_tbname"] = " " + ds_DD.Tables["报表配置主表"].Rows[0]["FS_D_datatable"].ToString() + " ";
 
+        //开始调用对sql语句的配置的二次处理类库
+        Assembly serviceAsm_tsthcs = Assembly.GetExecutingAssembly();
+        Type typeName_tsthcs = serviceAsm_tsthcs.GetType("NoReSetAR_tsthcs_" + ht_forUI["this_extforinfoFSID"].ToString());
+        if (typeName_tsthcs != null)
+        {
+            object instance = serviceAsm_tsthcs.CreateInstance("NoReSetAR_tsthcs_" + ht_forUI["this_extforinfoFSID"].ToString());
+            object rtnObj = typeName_tsthcs.GetMethod("NRS_AR").Invoke(instance, new object[] { ds_page, dic_mysearchtop, parameter_forUI });
+            ds_page = ((DataSet)rtnObj).Copy();
+            where_str = ds_page.Tables[0].Rows[0]["search_str_where"].ToString();
+            tbname = ds_page.Tables[0].Rows[0]["search_tbname"].ToString();
+        }
         //生成最终语句
 
-            string sql_ex = "select "+ field_str + " from "+ ds_DD.Tables["报表配置主表"].Rows[0]["FS_D_datatable"].ToString() + " where 1=1 " + where_str + " order by " + order_str + "";
+        string sql_ex = "select " + field_str + " from " + tbname + " where 1=1 " + where_str + " order by " + order_str + "";
 
         return_ht = I_DBL.RunParam_SQL(sql_ex, "导出的数据", param);
 
@@ -2960,7 +2996,7 @@ public class bssystem : System.Web.Services.WebService
         {
             DataSet redb = (DataSet)return_ht["return_ds"];
             dsreturn.Tables.Add(redb.Tables["导出的数据"].Copy());
-  
+
 
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
             dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "";
@@ -2976,7 +3012,7 @@ public class bssystem : System.Web.Services.WebService
 
 
 
- 
+
 
 
         //开始调用二次处理
