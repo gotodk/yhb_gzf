@@ -30,9 +30,37 @@
              jQuery(function ($) {
                  if (getUrlParam("fff") == "1") {
                      $("#searchopenyhbspgogo_M_HID").hide();
-                      
+
                  }
-                  
+                 else {
+                     //增加季度数量选择设置
+                     $("#fzzixiangmu").after("<div id='ggjdxx' style='margin-left:30px; color:red; '>快速操作：按照<input type='text' id='ggjdxx_ss' name='ggjdxx_ss'  ></input>季度租金填写金额</div>");
+                     $("#ggjdxx_ss").keyup(function () {
+                         //如果输入非数字，则替换为'' 
+                         this.value = this.value.replace(/[^\d]/g, '');
+
+  
+                         var tt_MZ_zj_bcsk = $("#MHjdzj").val() * 1 * $("#ggjdxx_ss").val();
+                         var tt_MZ_wy_bcsk = $("#MHjdwyf").val() * 1 * $("#ggjdxx_ss").val();
+                         var tt_MZ_dt_bcsk = $("#MHjddtf").val() * 1 * $("#ggjdxx_ss").val();
+                         var tt_MZ_q_bcsk = $("#MHjdqtfy").val() * 1 * $("#ggjdxx_ss").val();
+
+                         $("#MZ_zj_bcsk").val(tt_MZ_zj_bcsk);
+                         $("#MZ_wy_bcsk").val(tt_MZ_wy_bcsk);
+                         $("#MZ_dt_bcsk").val(tt_MZ_dt_bcsk);
+                         $("#MZ_q_bcsk").val(tt_MZ_q_bcsk);
+
+                     })
+                 }
+                 //预制合并区域
+                 $("#fz0001").after("<div id='stzstr' style='margin-left:50px;'></div>");
+                 $("#fenzu0003").after("<div id='xtzstr' style='margin-left:50px;'></div>");
+
+                 //分组线加重
+                 $("#fenzu0003").css({ "border-top": "1px solid #0066CC;" });
+               
+                 
+
                  window.setInterval(function () {
                      //计算合计值中的数据
 
@@ -64,6 +92,26 @@
                      var MZ_q_qiankuan = $("#MZ_q_qiankuan").val() * 1;
                      var hjqiankuan = (MZ_zj_qiankuan * 1 + MZ_wy_qiankuan * 1 + MZ_dt_qiankuan * 1 + MZ_q_qiankuan * 1).toFixed(2);
                      $("#MZ_all_qiankuan").val(hjqiankuan);
+
+
+
+                     //
+                     //把上方合计弄成一行显示
+                     $("#stzstr").html("租赁期限：" + $("#MHzlqx").val() + ",季度租金：" + $("#MHjdzj").val() + ",季度物业费：" + $("#MHjdwyf").val() + ",季度电梯费：" + $("#MHjddtf").val() + ",季度其他费：" + $("#MHjdqtfy").val() + "");
+                     $("#MHzlqx").closest(".form-group").hide();
+                     $("#MHjdzj").closest(".form-group").hide();
+                     $("#MHjdwyf").closest(".form-group").hide();
+                     $("#MHjddtf").closest(".form-group").hide();
+                     $("#MHjdqtfy").closest(".form-group").hide();
+
+                     //把下方合计弄成一行显示
+                     $("#xtzstr").html("应交费用合计：" + $("#MZ_all_xmje").val() + ",已缴纳合计：" + $("#MZ_all_yjn").val() + ",本次收款合计：" + $("#Mje").val() + ",欠款合计：" + $("#MZ_all_qiankuan").val() + "");
+                     $("#MZ_all_xmje").closest(".form-group").hide();
+                     $("#MZ_all_yjn").closest(".form-group").hide();
+                     $("#Mpz").closest(".form-group").hide();
+                     $("#Mje").closest(".form-group").hide();
+                     $("#MZ_all_qiankuan").closest(".form-group").hide();
+ 
 
                  }, 800);
 
@@ -134,13 +182,15 @@
                              var hejijiaona = (MZ_zj_yjn * 1 + MZ_wy_yjn * 1 + MZ_dt_yjn * 1 + MZ_q_yjn * 1).toFixed(2);
                              $("#MZ_all_yjn").val(hejijiaona);
 
+                        
+
                          }
 
                          oldzhi_rzhtbh = $(dfx_str_rzhtbh).text();
                      }
                  }, 500);
 
-
+              
  
         });
         </script>
