@@ -47,7 +47,7 @@
 					<div class="col-sm-10 col-sm-offset-1">
                         <div class="center">
 								<h1>
-									<span class="" style="color:#000000;font: bold 55px/100%;text-shadow: #ffd800 0 1px 0;" id="denglu_title" runat="server">系统名称</span>
+									<span class="" style="color:#000000;font:  bold 30px/100% 楷体;text-shadow: #ffd800 0 1px 0;" id="denglu_title" runat="server">系统名称</span>
 								</h1>
 						 
 							</div>

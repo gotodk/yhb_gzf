@@ -78,7 +78,7 @@
                 <a href="javascript:void(0)" class="navbar-brand">
                     <small>
                         <i><img src="/mytutu/templogo_s.jpg" border="0" runat="server" id="mysmlogo"/></i>
-                        <span id="titleshowname" runat="server">顶部标题名称</span>
+                        <span style="color:#ffffff;font:  bold 25px/100% 楷体;text-shadow: #ffd800 0 1px 0;" class=" hidden-480" id="titleshowname" runat="server">顶部标题名称</span>
                     </small>
                 </a>
 
