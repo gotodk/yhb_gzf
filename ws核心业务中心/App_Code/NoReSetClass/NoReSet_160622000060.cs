@@ -199,6 +199,7 @@ public class NoReSet_160622000060
         ArrayList alsql = new ArrayList();
         Hashtable param = new Hashtable();
         param.Add("@HID", ht_forUI["idforedit"].ToString());
+        param.Add("@HID_new", ht_forUI["HID"].ToString());
         param.Add("@H_CID", ht_forUI["H_CID"].ToString());
         param.Add("@H_FID", ht_forUI["H_FID"].ToString());
         param.Add("@Hshengxiaoriqi", ht_forUI["Hshengxiaoriqi"].ToString());
@@ -215,7 +216,7 @@ public class NoReSet_160622000060
         param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
         param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_RZHT SET  H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu ,   Hzlqx=@Hzlqx,Hjdzj=@Hjdzj,Hjdwyf=@Hjdwyf,Hjddtf=@Hjddtf,Hjdqtfy=@Hjdqtfy where HID=@HID ");
+        alsql.Add("UPDATE ZZZ_RZHT SET HID=@HID_new, H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu ,   Hzlqx=@Hzlqx,Hjdzj=@Hjdzj,Hjdwyf=@Hjdwyf,Hjddtf=@Hjddtf,Hjdqtfy=@Hjdqtfy where HID=@HID ");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
@@ -227,7 +228,7 @@ public class NoReSet_160622000060
         {
 
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！{" + ht_forUI["idforedit"].ToString() + "}";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "修改成功！{" + ht_forUI["HID"].ToString() + "}";
         }
         else
         {
