@@ -136,7 +136,7 @@ public class NoReSet_160706000070
         param.Add("@Hqiandingriqi", ht_forUI["Hqiandingriqi"].ToString());
         param.Add("@Hbeizhu", ht_forUI["Hbeizhu"].ToString());
 
-        alsql.Add("UPDATE ZZZ_HTchewei SET Hzhuangtai=@Hzhuangtai, H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu where HID=@HID and Hzhuangtai='草稿' ");
+        alsql.Add("UPDATE ZZZ_HTchewei SET Hzhuangtai=@Hzhuangtai, H_CID=@H_CID, H_FID=@H_FID, Hdaoqiriqi=@Hdaoqiriqi, Hfkfs=@Hfkfs, Hje=@Hje, Hshengxiaoriqi=@Hshengxiaoriqi, Hqiandingriqi=@Hqiandingriqi, Hbeizhu=@Hbeizhu where HID=@HID  ");
  
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);

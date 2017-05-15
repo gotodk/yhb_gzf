@@ -622,6 +622,70 @@ public class bssystem : System.Web.Services.WebService
     }
 
 
+
+
+    private string zidongtuizu()
+    {
+
+
+        //参数合法性各种验证，这里省略
+
+        //开始真正的处理，这里只是演示，所以直接在这里写业务逻辑代码了
+
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        Hashtable param = new Hashtable();
+
+        return_ht = I_DBL.RunParam_SQL("select * from ZZZ_RZHT where Hzhuangtai='生效' and datediff(dd,Hdaoqiriqi,GETDATE())=0", "主要数据", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["主要数据"].Copy();
+
+            if (redb.Rows.Count < 1)
+            {
+                return "没有合同到期数据";
+            }
+            ArrayList alsql = new ArrayList();
+            return_ht = new Hashtable();
+            param = new Hashtable();
+            param.Add("@TZbeizhu", "到期系统自动退租");
+            param.Add("@TZchuangjianren", "U-A4A301784369-0E8361E4-7973-457E-8792");
+            for (int i = 0; i < redb.Rows.Count; i++)
+            {
+                string guid = CombGuid.GetMewIdFormSequence("ZZZ_tuizujilu");
+                param.Add("@TZID" + i, guid);
+             
+                param.Add("@TZ_HID" + i, redb.Rows[i]["HID"].ToString());
+         
+
+
+
+                alsql.Add("INSERT INTO ZZZ_tuizujilu(TZID, TZriqi, TZ_HID, TZbeizhu, TZchuangjianren) VALUES(@TZID" + i + ", GETDATE(), @TZ_HID" + i + ", @TZbeizhu, @TZchuangjianren)");
+                alsql.Add("UPDATE ZZZ_RZHT SET  Hzhuangtai='已退租'  where HID =@TZ_HID" + i + "");
+                alsql.Add("UPDATE ZZZ_fangzi SET  Fzhuangtai='空置'  where FID = (select top 1 H_FID from ZZZ_RZHT where HID=@TZ_HID" + i + ")");
+                alsql.Add("UPDATE ZZZ_chengzuren SET  Czhuangtai='未承租'  where CID =(select top 1 H_CID from ZZZ_RZHT where HID=@TZ_HID" + i + ")");
+            }
+
+            return_ht = I_DBL.RunParam_SQL(alsql, param);
+
+            if ((bool)(return_ht["return_float"]))
+            {
+                return "自动退租成功，相关状态已更改！";
+            }
+            else
+            {
+                return "自动退租出错";
+            }
+
+        }
+        return "no";
+
+
+    }
+
+
+
     /// <summary>
     /// 后台管理登录验证
     /// </summary>
@@ -723,6 +787,9 @@ public class bssystem : System.Web.Services.WebService
                 I_DBL.RunParam_SQL(lasp);
                 dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
                 dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "";
+
+                //自动进行合同到期退租操作
+                zidongtuizu();
             }
             else
             {

@@ -995,25 +995,25 @@
     <script type="text/javascript">
         //自定义表单验证方法
         $.validator.addMethod("lrunlv_zhengshu", function (value, element) {
-            return this.optional(element) || /^\d+(\.\d{0,0})?$/.test(value);
+            return this.optional(element) || /^-*\d+(\.\d{0,0})?$/.test(value);
         }, "请输入整数。");
         $.validator.addMethod("lrunlv_1", function (value, element) {
-            return this.optional(element) || /^\d+(\.\d{1,1})?$/.test(value);
+            return this.optional(element) || /^-*\d+(\.\d{1,1})?$/.test(value);
         }, "请精确至一位小数。");
         $.validator.addMethod("lrunlv_2", function (value, element) {
-            return this.optional(element) || /^\d+(\.\d{1,2})?$/.test(value);
+            return this.optional(element) || /^-*\d+(\.\d{1,2})?$/.test(value);
         }, "请精确至两位小数。");
         $.validator.addMethod("lrunlv_3", function (value, element) {
-            return this.optional(element) || /^\d+(\.\d{1,3})?$/.test(value);
+            return this.optional(element) || /^-*\d+(\.\d{1,3})?$/.test(value);
         }, "请精确至三位小数。");
         $.validator.addMethod("lrunlv_4", function (value, element) {
-            return this.optional(element) || /^\d+(\.\d{1,4})?$/.test(value);
+            return this.optional(element) || /^-*\d+(\.\d{1,4})?$/.test(value);
         }, "请精确至四位小数。");
         $.validator.addMethod("lrunlv_5", function (value, element) {
-            return this.optional(element) || /^\d+(\.\d{1,5})?$/.test(value);
+            return this.optional(element) || /^-*\d+(\.\d{1,5})?$/.test(value);
         }, "请精确至五位小数。");
         $.validator.addMethod("lrunlv_6", function (value, element) {
-            return this.optional(element) || /^\d+(\.\d{1,6})?$/.test(value);
+            return this.optional(element) || /^-*\d+(\.\d{1,6})?$/.test(value);
         }, "请精确至六位小数。");
         $.validator.addMethod("_xxxxxxxxxxxx", function (value, element) {
             return true;
